@@ -1,0 +1,22 @@
+#+title: Design and Implementation of a Distributed Parking Management System
+#+setupfile: ~/git/templates/org/thesis/setupfile.org
+
+* Abstract
+In this project I have designed, developed and implemented a fully distributed system for managing multiple communities. In each community there is a independent server that runs a ML model to detect. The main idea behind this is to create a system where each community has a fully independent sytsem for manaing their garage where users can allow or deny the access to specific cars.
+
+This project has been done in collaboration with the Automation department.
+
+* Motivation
+* Overview
+* Infrastructure
+* Design
+** Server
+** Terminals
+** CI/CD
+** Mobile
+** Interconnection
+** Backup
+** Alert system
+* Final System
+* Future work
+* Results
