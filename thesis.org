@@ -1,22 +1,281 @@
-#+title: Design and Implementation of a Distributed Parking Management System
-#+setupfile: ~/git/templates/org/thesis/setupfile.org
+#+title: Design and Implementation of a Distributed Parking Management System for Smart Cities
 
-* Abstract
-In this project I have designed, developed and implemented a fully distributed system for managing multiple communities. In each community there is a independent server that runs a ML model to detect. The main idea behind this is to create a system where each community has a fully independent sytsem for manaing their garage where users can allow or deny the access to specific cars.
+* Set-up :ignore:
+:properties:
+:visibility: folded
+:end:
 
-This project has been done in collaboration with the Automation department.
+** Configuration :noexport:
+#+author: Andrés Navarro Pedregal
+#+creator: Andrés Navarro Pedregal
+#+bibliography: ./references.bib
+#+latex_header: \newcommand{\degree}{Data Science and Engineering and Telecommunication Technologies Engineering}
+#+latex_header: \newcommand{\graduationyear}{2024-2025}
+#+latex_header: \newcommand{\supervisor}{David Larrabeiti López}
+#+latex_header: \newcommand{\placeandyear}{Leganés, 2025}
+#+language: en
+#+options: title:nil toc:nil tags:nil
+#+latex_class: book
+#+latex_class_options: [oneside, 12pt, a4paper, draft]
+#+latex_header: \makeatletter
+#+latex_header: \def\input@path{{./templates/thesis/}}
+#+latex_header: \graphicspath{{./figures} {./logos} {./templates/thesis/figures}}
+#+latex_header: \makeatother
+#+latex_header: \usepackage{thesis_uc3m}
 
-* Motivation
-* Overview
-* Infrastructure
+** Title :ignore:
+#+latex: \frontmatter
+#+latex: \maketitle
+#+latex: \blankpage
+
+** Abstract :ignore:
+#+latex: \chapter*{Abstract}
+
+#+BEGIN_abstract
+  this is an abstract
+#+END_abstract
+
+*Keywords:* .
+
+#+latex: \blankpage
+
+** Acknowledgments :ignore:
+#+latex: \chapter*{Acknowledgments}
+#+latex: \begingroup
+#+latex: \let\clearpage\relax % This temporarily disables \clearpage
+
+According to [cite:@smith2020], this is an example citation.
+
+#+latex: \chapter*{Agradecimientos}
+
+Gracias
+#+latex: \endgroup
+
+#+latex: \blankpage
+
+** Table of Contents :ignore:
+#+latex: \chapter*{Table of Contents}
+
+#+latex: \makeatletter
+#+latex: \@starttoc{toc}
+#+latex: \vskip 1.0em \@plus\p@
+#+latex: \makeatother
+
+#+latex: \blankpage
+** List of Figures :ignore:
+#+latex: \chapter*{List of Figures}
+
+#+latex: \blankpage
+
+** List of Tables :ignore:
+#+latex: \chapter*{List of Tables}
+
+#+latex: \blankpage
+
+** Acronyms :ignore:
+#+latex: \chapter*{Acronyms}
+
+#+latex: \blankpage
+
+** Nomenclature :ignore:
+#+latex: \chapter*{Nomenclature}
+
+** End of frontmatter :ignore:
+#+latex: \mainmatter
+* Introduction
+** General understanding and relevance of parking management systems
+Over the past years, the number of cars has increased exponentially which has caused a lot of problems in the cities, one of them is the parking.
+For example, in recent years, as the number of cars has increased in Madrid, the pollution has also increased [cite:@environmental_imapct_madrid_central].
+
+According to [cite:@urban_mobility_trends], the number of parking spaces in Spain between the years 2014 and 2020 has remained stable.
+This has made the parking spaces more expensive and difficult to find and has increased the time that the citizens spend looking for a parking space.
+Which in consequence, has increase the traffic congestion and the pollution in the cities
+
+To make matters worse; nowadays, parking spaces in Spain are based mainly on human intervention, where the spaces are managed by a person who is in charge of controlling the access to the parking spaces.
+This management method usually leads to a lot of problems, like delay of availability, lack of information or control of the parking spaces.
+
+Consequently, in the last years, new technologies have emerged to help to solve this problem.
+For example, according to [cite:@iot_growth]; the number of internet-connected devices has increased exponentially, with a year over year growth of 20%.
+This has made possible to create new parking management systems based on the Internet of Things (IoT) that can help to reduce the traffic congestion and the pollution in the cities.
+
+A parking management system is a system that is used to manage the parking spaces in a city. It is many used to reduce the traffic congestion and help to improve the ease of managing the parking spaces in a community.
+
+There are several types of parking management systems, but they share some common features such as:
+- They are used to automate the management of the parking spaces.
+- They are used in an area which can be a city, a community or a building.
+- They are used to record the transit of the vehicles in the parking spaces.
+
+Parking management systems have a range of benefits in today's society. In the field of urban mobility, parking management systems can help to reduce the traffic congestion and the pollution in the cities.
+They can also help to improve the quality of life of the citizens by reducing the time that they spend looking for a parking space.
+Additionally, parking management systems can help with the security of the parking spaces by recording the transit of the vehicles in the parking spaces which can help to prevent thefts and other crimes.
+
+** Motivation
+Parking management systems are an active area of research and development, despite the fact that manual parking management have been used for many years.
+According to the research published in [cite:@parking_choices], the type of parking management system heavily influences the parking choices of the citizens.
+The research also shows that the citizens prefer parking management systems that are easy to use, secure, and reliable.
+
+As mentioned before, the types of parking management systems that are currently used in Spain are mainly based on human intervention, which usually leads to problems like delay of availability, lack of information or control of the parking spaces.
+And in order to have the parking management systems working for the whole day, the presence of a person is required, which increases the costs of the system.
+
+Because of this problems, in the recent years, new technologies have emerged to help to solve this problem. For example:
+- RFID-based smart parking management systems [cite:@rfid_smart_parking_management_system] have been developed to cope with the problem of logging the transit of the vehicles in the parking spaces.
+- IoT-based smart parking management systems [cite:@development_smart_parking_management_system] have been designed to cope with the problem of managing the parking spaces in a community.
+- Intelligent parking systems based on image processing [cite:@intelligent_parking_system_image_processing] have been proposed to cope with the problem of recognizing the plates of the cars that are parked in the parking spaces.
+
+However, despite the advances in the field of parking management systems, there are still some problems that need to be solved. For example, the current parking management systems are usually centralized, which usually leads to problems for scaling and reliability in case of a service cut.
+Also, the current parking management systems are usually not customizable, which usually leads to problems for adapting the system to the needs of the users.
+
+Because of this problems, the main objective of this project is to design and implement a fully distributed parking management system which try to solve the problems of the current parking management systems.
+
+** Objectives
+The main objective of this bachelor thesis is the design and implementation of a fully distributed parking management system for the next generation of smart cities.
+
+More specifically, the objectives of this project are the following:
+1. To research the current parking management systems and the main problems that they have. From studying the requirements of the users to the technologies that are used to create the systems.
+2. To analyze the current parking management systems and the technologies that can be used to create a distributed system.
+3. To design the infrastructure of the system, including the architecture, the technologies, and the design.
+4. To develop the system, following a methodology that includes planning, design, implementation, testing, deployment, and maintenance.
+5. To analyze the results of the project, including the performance, scalability, security, usability, reliability, availability, and costs of the system.
+
+** Outline of the work
+The project will be divided into several phases, each one with its own objectives and tasks.
+
+In the first chapter, a study of the current parking management systems will be done to analyze the features and the main problems that they have.
+
+In the second chapter, a initial study of the technologies that can be used to create a distributed parking management system will be done. This will include the software and hardware that can be used to create the system and the infrastructure that will be needed.
+
+In the third chapter, the implementation of the system will be done, following a methodology that includes planning, design, implementation, testing, deployment, and maintenance.
+
+In the fourth chapter, the results of the project will be analyzed, including the performance, scalability, security, usability, reliability, availability, and costs of the system.
+
+And finally, in the fifth chapter, the conclusions and future works will be presented.
+
+*** TODO add links to each chapter
+* State of the art
+** Parking management systems
+history
+types
+
+** Distributed Systems
+** Technologies
+** Existing Implementation
 * Design
-** Server
-** Terminals
-** CI/CD
-** Mobile
-** Interconnection
-** Backup
-** Alert system
-* Final System
-* Future work
+** Overview and Requirements
+The parking management system designed during this project is designed to be a fully distributed system capable of managing the parking spaces in a wide variety of communities and facilities.
+Its goal is to reduce the traffic congestion and the pollution in the cities, and to improve the quality of life of the citizens easing the management of the parking spaces in a community.
+
+The system has several requirements that must be met in order to be able to achieve its goal. These requirements are the following:
+
+*** Fault Tolerant
+The system must be distributed, that is to say, the workloads must have redundancy built in place reducing the single point of failures.
+This is because the system must be able to work even if there are internet cuts, and it must be able to withstand any situation where there is a service cut.
+
+*** Secure
+The system must be able to store the data encrypted in the user's device.
+This is because the data must be secure at all times, and it must be resistant to any intruder that tries to access it.
+
+Moreover, all communications between the devices must be encrypted to protect the data from any man in the middle attacks [cite:@man_in_the_middle].
+
+*** Scalable
+The system must be able to cope with any size of community or facility. For this purpose, the system must be able to scale horizontally, that is to say, it must be able to add new devices to the system in a secure and easy way in order to increase the capacity of the system.
+
+*** Easy to use
+The system must be simple and easy to use, so anyone can use it. The system must be complex enough to manage the parking spaces in a community, but it must be simple enough to be used by anyone.
+
+Moreover, it must be able to be used on every computer or device possible, so the users do not have to worry about the compatibility of the system.
+
+*** Automated
+The system must be able to be upgraded and managed automatically. This is because the system must be able to support automatic updates and backups, so the users do not have to worry about the system being outdated or losing the data.
+
+Moreover, the system must be able to send automatic alerts to the users when a parking space is available, or when an intruder is detected in the parking spaces.
+
+*** Cost-effective
+The system must be cost-effective, that is to say, it must be able to save costs by automating the management of the parking spaces and eliminating the need of a person to be present all the time.
+
+** Architecture
+For the design of the system, a distributed architecture will be used. This is because the system must be able to manage the parking spaces in a community, and it must be able to work on every computer or device possible.
+
+# TODO: add architecture diagram
+
+An overview of the system is shown in the diagram depecited in Figure TODO. In this diagram, the main components of the system are shown, which are:
+
+*** Terminals
+The terminals are the main application of the system.
+They will be used to manage the parking spaces in a community.
+The main features of the terminals are the following:
+
+- Host the main application of the system where the users can manage the parking spaces in a community.
+- Store the data encrypted in the user's device to protect the privacy of the users.
+- Host the ML model that will be used to run the plate recognition system.
+- Backup the data automatically to avoid losing the data.
+- Support automatic updates to avoid the system being outdated.
+
+**** Database
+The database that will be using is a SQL database. This is because the data is structured and the system must be able to manage the parking spaces in a community. Moreover, the data must be secure, and the system must be able to work on every computer or device possible.
+
+**** ML model
+The ML model that will be used is a plate recognition system. This is because the system must be able to recognize the plates of the cars that are parked in the parking spaces. Moreover, the system must be able to manage the parking spaces in a community.
+
+*** Web server
+The server will be used to show the data and manage the parking spaces in a friendly way so users can easily manage the parking spaces. The main features of the server are the following:
+
+- Show the data and manage the parking spaces in a friendly way so users can easily manage the parking spaces.
+- Be able to detect all the communities that a user is part of and show the parking spaces of each community.
+- Be able to show the parking spaces in a map so users can easily see where they are.
+
+*** Backup storage
+*** Automation servers
+** Technologies and Hardware
+*** Terminals
+*** Web servers
+In order to have a server where users can manage the parking spaces in a community, a cloud service will be used.
+
+**** Comparison
+
+
+*** Programming languages
+*** Communications
+*** Libraries
+*** Tools
+** Design
+*** UML
+*** ER
+*** Flowcharts
+*** Mockups
+*** Schemas
+* Implementation and Development
+** Implementation
+** Methodology
+** Planning
+** Design
+** Implementation
+** Testing
+** Deployment
+** Maintenance
 * Results
+** Performance
+** Scalability
+** Security
+** Usability
+** Reliability
+** Availability
+** Costs
+* Conclusions
+** Conclusions
+** Future works
+** Socio-economic environment
+The goal of this work is to design and implement a next-generation parking management system for smart cities with the aim of improving the quality of life of the citizens and reducing the traffic congestion and the pollution in the cities.
+
+On the one hand, the citizens will benefit from the system by reducing the time that they spend looking for a parking space and by automating the management of the parking spaces in a community.
+Moreover, the system will help to improve the security of the parking spaces by recording the transit of the vehicles in the parking spaces.
+
+This in consequence will increase the quality of life of the citizens as the ease of managing the parking spaces in a community will be improved and the security of the parking spaces will be increased.
+
+On the other hand, the benefits of the system for the city or the communities are also important. The system will save costs by automating the management of the parking spaces and eliminating the need of a person to be present all the time.
+
+Additionally, the system will be able to send automatic alerts to the users when a parking space is available, or when an intruder is detected in the parking spaces.
+
+** TODO Regulatory framework
+* Bibliography :ignore:
+#+print_bibliography:
+#+latex: \addcontentsline{toc}{chapter}{Bibliography} % add bibliography to the TOC
