@@ -84,114 +84,270 @@ Gracias
 #+latex: \mainmatter
 * Introduction
 ** General understanding and relevance of parking management systems
-Over the past years, the number of cars has increased exponentially which has caused a lot of problems in the cities, one of them is the parking.
-For example, in recent years, as the number of cars has increased in Madrid, the pollution has also increased [cite:@environmental_imapct_madrid_central].
+In recent years, the exponential increase in the number of vehicles has exacerbated urban challenges, notably in parking management. For instance, the surge in car usage in Madrid has significantly contributed to increased pollution levels [cite:@environmental_imapct_madrid_central]. Despite a stable number of parking spaces in Spain between 2014 and 2020 [cite:@urban_mobility_trends], the demand has led to higher costs and greater difficulty in securing parking, thereby increasing time spent searching for spaces, traffic congestion, and urban pollution.
 
-According to [cite:@urban_mobility_trends], the number of parking spaces in Spain between the years 2014 and 2020 has remained stable.
-This has made the parking spaces more expensive and difficult to find and has increased the time that the citizens spend looking for a parking space.
-Which in consequence, has increase the traffic congestion and the pollution in the cities
+Current parking management in Spain predominantly relies on human intervention, where personnel are responsible for regulating access to parking spaces. This manual approach often results in delays, inadequate information dissemination, and inefficient control over parking availability.
 
-To make matters worse; nowadays, parking spaces in Spain are based mainly on human intervention, where the spaces are managed by a person who is in charge of controlling the access to the parking spaces.
-This management method usually leads to a lot of problems, like delay of availability, lack of information or control of the parking spaces.
+Advancements in technology offer promising solutions to these issues. The proliferation of internet-connected devices, which have grown by 20% year-over-year [cite:@iot_growth], has facilitated the development of Internet of Things (IoT)-based parking management systems. These systems aim to mitigate traffic congestion and reduce pollution in urban areas.
 
-Consequently, in the last years, new technologies have emerged to help to solve this problem.
-For example, according to [cite:@iot_growth]; the number of internet-connected devices has increased exponentially, with a year over year growth of 20%.
-This has made possible to create new parking management systems based on the Internet of Things (IoT) that can help to reduce the traffic congestion and the pollution in the cities.
+A parking management system (PMS) is designed to optimize the utilization of parking spaces within a city, community, or building. The primary objectives of a PMS include automating parking space management, recording vehicle transit, and enhancing overall operational efficiency.
 
-A parking management system is a system that is used to manage the parking spaces in a city. It is many used to reduce the traffic congestion and help to improve the ease of managing the parking spaces in a community.
+PMSs provide numerous benefits in modern urban settings. They contribute to reducing traffic congestion and pollution, thereby improving urban mobility and the quality of life for residents. Additionally, PMSs enhance security by monitoring vehicle movements within parking areas, which aids in crime prevention.
 
-There are several types of parking management systems, but they share some common features such as:
-- They are used to automate the management of the parking spaces.
-- They are used in an area which can be a city, a community or a building.
-- They are used to record the transit of the vehicles in the parking spaces.
+These systems share several common features:
+- Automation of parking space management.
+- Application in various areas such as cities, communities, or buildings.
+- Documentation of vehicle transit within parking spaces.
 
-Parking management systems have a range of benefits in today's society. In the field of urban mobility, parking management systems can help to reduce the traffic congestion and the pollution in the cities.
-They can also help to improve the quality of life of the citizens by reducing the time that they spend looking for a parking space.
-Additionally, parking management systems can help with the security of the parking spaces by recording the transit of the vehicles in the parking spaces which can help to prevent thefts and other crimes.
+The integration of PMSs into urban infrastructure not only addresses parking-related issues but also aligns with broader smart city initiatives aimed at enhancing urban living conditions.
 
 ** Motivation
-Parking management systems are an active area of research and development, despite the fact that manual parking management have been used for many years.
-According to the research published in [cite:@parking_choices], the type of parking management system heavily influences the parking choices of the citizens.
-The research also shows that the citizens prefer parking management systems that are easy to use, secure, and reliable.
+Parking management systems remain a critical area of research and development, even though manual parking management has been utilized for many years. Research published in [cite:@parking_choices] indicates that the type of parking management system significantly influences the parking choices of citizens. Additionally, citizens tend to prefer systems that are user-friendly, secure, and reliable.
 
-As mentioned before, the types of parking management systems that are currently used in Spain are mainly based on human intervention, which usually leads to problems like delay of availability, lack of information or control of the parking spaces.
-And in order to have the parking management systems working for the whole day, the presence of a person is required, which increases the costs of the system.
+Currently, parking management systems in Spain largely rely on human intervention, leading to several issues such as delays in availability, lack of information, and insufficient control of parking spaces. Continuous human presence is required to maintain the functionality of these systems throughout the day, which increases operational costs.
 
-Because of this problems, in the recent years, new technologies have emerged to help to solve this problem. For example:
-- RFID-based smart parking management systems [cite:@rfid_smart_parking_management_system] have been developed to cope with the problem of logging the transit of the vehicles in the parking spaces.
-- IoT-based smart parking management systems [cite:@development_smart_parking_management_system] have been designed to cope with the problem of managing the parking spaces in a community.
-- Intelligent parking systems based on image processing [cite:@intelligent_parking_system_image_processing] have been proposed to cope with the problem of recognizing the plates of the cars that are parked in the parking spaces.
+To address these issues, recent technological advancements have emerged. For instance:
+- RFID-based smart parking management systems [cite:@rfid_smart_parking_management_system] have been developed to manage the transit of vehicles within parking spaces.
+- IoT-based smart parking management systems [cite:@development_smart_parking_management_system] have been designed to manage parking spaces within a community.
+- Intelligent parking systems utilizing image processing [cite:@intelligent_parking_system_image_processing] have been proposed to recognize license plates of parked vehicles.
 
-However, despite the advances in the field of parking management systems, there are still some problems that need to be solved. For example, the current parking management systems are usually centralized, which usually leads to problems for scaling and reliability in case of a service cut.
-Also, the current parking management systems are usually not customizable, which usually leads to problems for adapting the system to the needs of the users.
+Despite these advancements, several challenges persist. Current parking management systems are typically centralized, which presents scalability and reliability issues in the event of service interruptions. Additionally, these systems often lack customization options, making it difficult to adapt to user-specific needs.
 
-Because of this problems, the main objective of this project is to design and implement a fully distributed parking management system which try to solve the problems of the current parking management systems.
+Given these challenges, the primary objective of this project is to design and implement a fully distributed parking management system that addresses the limitations of current systems, focusing on enhancing scalability, reliability, and user adaptability.
 
 ** Objectives
-The main objective of this bachelor thesis is the design and implementation of a fully distributed parking management system for the next generation of smart cities.
+The primary objective of this bachelor thesis is to design and implement a fully distributed parking management system tailored for the next generation of smart cities. This project aims to address the inefficiencies and challenges inherent in current parking management systems through a distributed approach that leverages modern technologies.
 
-More specifically, the objectives of this project are the following:
-1. To research the current parking management systems and the main problems that they have. From studying the requirements of the users to the technologies that are used to create the systems.
-2. To analyze the current parking management systems and the technologies that can be used to create a distributed system.
-3. To design the infrastructure of the system, including the architecture, the technologies, and the design.
-4. To develop the system, following a methodology that includes planning, design, implementation, testing, deployment, and maintenance.
-5. To analyze the results of the project, including the performance, scalability, security, usability, reliability, availability, and costs of the system.
+Specifically, the objectives of this project are as follows:
+
+1. *Research Current Systems*: Conduct a comprehensive study of existing parking management systems, identifying their main problems. This involves understanding user requirements, analyzing the technologies employed, and evaluating system effectiveness.
+
+2. *Technology Analysis*: Analyze the technologies currently used in parking management systems to determine their suitability for a distributed architecture. This includes examining sensors, Internet of Things (IoT) devices, communication protocols, and data processing methods.
+
+3. *System Infrastructure Design*: Design the overall infrastructure of the distributed parking management system. This encompasses defining the system architecture, selecting appropriate technologies, and developing detailed design specifications.
+
+4. *System Development*: Develop the system by adhering to a structured methodology that includes phases of planning, design, implementation, testing, deployment, and maintenance. Each phase will follow best practices to ensure the system's robustness and efficiency.
+
+5. *Performance Analysis*: Evaluate the implemented system based on various criteria such as performance, scalability, security, usability, reliability, availability, and cost. This comprehensive analysis will help in assessing the effectiveness of the system and identifying areas for improvement.
+
+Through these objectives, the thesis aims to contribute to the advancement of smart city technologies by providing a scalable, secure, and user-friendly parking management solution. The distributed nature of the proposed system is expected to enhance its performance and reliability, making it a viable option for modern urban environments.
 
 ** Outline of the work
-The project will be divided into several phases, each one with its own objectives and tasks.
+This thesis is structured into several comprehensive chapters, each targeting specific objectives and tasks essential to the development of a distributed parking management system for smart cities.
 
-In the first chapter, a study of the current parking management systems will be done to analyze the features and the main problems that they have.
+The first chapter provides an in-depth study of existing parking management systems, focusing on their features and identifying key issues. This analysis serves as the foundation for understanding the requirements and challenges faced in current systems.
 
-In the second chapter, a initial study of the technologies that can be used to create a distributed parking management system will be done. This will include the software and hardware that can be used to create the system and the infrastructure that will be needed.
+The second chapter delves into the technologies that can be employed to create a distributed parking management system. It encompasses an initial evaluation of both software and hardware components, along with the necessary infrastructure to support such a system.
 
-In the third chapter, the implementation of the system will be done, following a methodology that includes planning, design, implementation, testing, deployment, and maintenance.
+The third chapter covers the implementation phase of the project. It follows a systematic methodology that includes planning, design, implementation, testing, deployment, and maintenance. Each stage is meticulously documented to ensure clarity and reproducibility.
 
-In the fourth chapter, the results of the project will be analyzed, including the performance, scalability, security, usability, reliability, availability, and costs of the system.
+In the fourth chapter, the results of the implemented system are thoroughly analyzed. This analysis includes assessments of performance, scalability, security, usability, reliability, availability, and costs. Each aspect is evaluated using appropriate metrics and benchmarks to provide a comprehensive understanding of the system's effectiveness.
 
-And finally, in the fifth chapter, the conclusions and future works will be presented.
+Finally, the fifth chapter presents the conclusions drawn from the research and development process. It also outlines potential future work, considering advancements that could further enhance the system. Additionally, this chapter discusses the socio-economic impact and regulatory framework relevant to the deployment of a distributed parking management system in smart cities.
+
+This structured approach ensures a logical progression through the research, design, implementation, and evaluation phases, providing a detailed and professional documentation of the project.
 
 *** TODO add links to each chapter
 * State of the art
-** Parking management systems
-history
-types
+** Overview of Parking Management Systems
+Parking management systems have evolved significantly over the decades, adapting to the increasing demands of urban environments and technological advancements. This section provides a comprehensive overview of the historical development of parking management systems, examining their origins and progression. It also explores modern trends that have emerged in response to contemporary urban challenges and technological innovations. Additionally, it addresses the ongoing challenges faced by these systems, highlighting the areas that require further development to meet the needs of smart cities.
 
-** Distributed Systems
+*** Historical Development
+The evolution of parking management systems (PMS) has been driven by the increasing urbanization and the consequent rise in the number of vehicles. In the early stages, parking management was rudimentary, primarily involving manual interventions where attendants managed parking spaces and collected fees. This manual process was time-consuming and often inefficient, leading to issues such as congestion and disputes over parking spaces.
+
+The introduction of mechanical parking meters in the 1930s marked a significant milestone in parking management. These meters automated the fee collection process, thereby reducing the need for human intervention and providing a structured approach to managing parking spaces. However, the system still had limitations, including the inability to monitor parking space occupancy in real-time and the need for regular maintenance and collection of fees.
+
+The 1970s and 1980s saw the advent of computerized parking management systems, which leveraged early computing technologies to offer more sophisticated solutions. These systems introduced features such as centralized control, automated ticketing, and basic reporting capabilities. Despite these advancements, the systems were still relatively inflexible and often required significant manual oversight.
+
+With the rise of the internet in the late 1990s and early 2000s, parking management systems began to incorporate web-based functionalities. This period witnessed the development of online reservation systems and the integration of electronic payment options. These innovations improved user convenience and operational efficiency, yet they were still predominantly centralized systems, which posed challenges in terms of scalability and resilience.
+
+*** Modern Trends and Challenges
+In recent years, the landscape of parking management systems has been transformed by advancements in technology, particularly the proliferation of Internet of Things (IoT) devices, big data analytics, and artificial intelligence (AI). Modern PMS are now equipped with a range of smart features designed to enhance user experience, optimize space utilization, and reduce operational costs.
+
+One of the key trends in contemporary parking management is the integration of IoT devices. These devices, which include sensors and smart cameras, provide real-time data on parking space occupancy and vehicle movements. This data enables dynamic pricing models, where parking fees are adjusted based on demand, thereby optimizing revenue and space utilization. IoT-enabled systems also facilitate real-time navigation assistance for drivers, reducing the time spent searching for parking spaces and subsequently decreasing traffic congestion and emissions.
+
+Another significant trend is the use of big data analytics. By analyzing large volumes of data generated by IoT devices, parking management systems can gain insights into usage patterns, peak times, and user preferences. These insights are invaluable for urban planners and parking operators, allowing them to make data-driven decisions to improve infrastructure and services.
+
+AI and machine learning are also being increasingly incorporated into PMS. These technologies enable predictive analytics, which can forecast parking demand and optimize space allocation accordingly. Additionally, AI-powered systems can enhance security through advanced video analytics that detect suspicious activities and automate enforcement actions such as issuing fines for violations.
+
+Despite these advancements, several challenges persist. One of the primary issues is the scalability of current systems. Many existing PMS are centralized, meaning that a failure in the central system can disrupt the entire operation. Distributed systems, which spread processing and data storage across multiple nodes, offer a potential solution to this problem, providing greater resilience and scalability.
+
+Another challenge is the need for interoperability between different technologies and systems. The diversity of devices and communication protocols used in modern PMS can lead to compatibility issues, complicating integration efforts. Standardization of protocols and interfaces is crucial to ensure seamless operation and data exchange between different components of the system.
+
+Security and privacy concerns are also significant challenges. The extensive use of IoT devices and data analytics in parking management raises the risk of cyberattacks and data breaches. Ensuring robust security measures and compliance with privacy regulations is essential to protect user data and maintain trust in the system.
+
+In conclusion, the historical development of parking management systems has been characterized by a gradual shift from manual processes to sophisticated, technology-driven solutions. Modern trends such as IoT integration, big data analytics, and AI are driving significant improvements in efficiency and user experience. However, challenges related to scalability, interoperability, security, and privacy must be addressed to fully realize the potential of these advanced systems in the context of smart cities.
+
 ** Technologies
+The development of a distributed parking management system for smart cities hinges on the effective integration of various technologies. These technologies encompass a broad range of components, from sensors and Internet of Things (IoT) devices to advanced communication protocols and data processing techniques. Each plays a crucial role in ensuring that the system operates efficiently, reliably, and in real-time.
+
+Sensors and IoT devices are the foundational elements that gather essential data on parking space occupancy, vehicle movements, and environmental conditions. This data is transmitted through robust communication protocols that facilitate seamless interaction between the various components of the system. Effective data processing and analytics are then employed to interpret this data, providing actionable insights and enabling intelligent decision-making.
+
+In this section, we will delve into the specific technologies that are instrumental in creating a distributed parking management system. We will explore the types of sensors and IoT devices commonly used, examine the communication protocols that support data exchange, and discuss the data processing and analytics techniques that transform raw data into valuable information. By understanding these technologies, we can appreciate their roles in enhancing the functionality and efficiency of modern parking management systems.
+
+*** Sensors and IoT Devices
+
+In the realm of parking management systems, sensors and Internet of Things (IoT) devices are pivotal components that facilitate the real-time monitoring and management of parking spaces. These technologies are essential for gathering data on parking space occupancy, vehicle movement, and environmental conditions, which are then used to optimize the allocation of parking resources and enhance the user experience.
+
+**** Types of Sensors
+
+1. *Ultrasonic Sensors*: These sensors are commonly used for detecting the presence of vehicles in parking spaces. They work by emitting ultrasonic waves and measuring the time it takes for the waves to bounce back from an object. Ultrasonic sensors are cost-effective and relatively easy to install, making them a popular choice for parking management systems.
+
+2. *Infrared Sensors*: Infrared sensors detect the presence of vehicles by measuring the infrared radiation emitted by objects. These sensors are highly accurate and can operate in various environmental conditions, including low light and extreme temperatures. They are often used in conjunction with other sensor types to enhance the reliability of detection.
+
+3. *Magnetic Sensors*: Magnetic sensors detect changes in the Earth's magnetic field caused by the presence of a vehicle. These sensors are typically embedded in the pavement and can provide highly accurate occupancy data. They are particularly useful in outdoor parking environments where other sensor types may be less effective.
+
+4. *Image Sensors*: Image sensors, often coupled with advanced image processing algorithms, are used to capture visual data of parking spaces and vehicle movements. These sensors can recognize license plates and monitor parking duration, contributing to more sophisticated parking management solutions.
+
+**** Internet of Things (IoT) Devices
+
+IoT devices play a crucial role in connecting sensors and enabling communication between various components of the parking management system. These devices include:
+
+1. *IoT Gateways*: IoT gateways aggregate data from multiple sensors and transmit it to central servers or cloud platforms for processing. They ensure seamless communication between sensors and the central management system, often utilizing protocols such as MQTT (Message Queuing Telemetry Transport) or CoAP (Constrained Application Protocol).
+
+2. *Smart Parking Meters*: Equipped with connectivity features, smart parking meters allow users to pay for parking digitally and receive real-time updates on parking availability. These meters are often integrated with mobile applications, enhancing user convenience and reducing the need for physical infrastructure.
+
+3. *Vehicle Detection Units (VDUs)*: VDUs integrate various sensor types and communication modules to provide comprehensive data on parking space occupancy. These units are designed to be robust and weather-resistant, making them suitable for outdoor installations.
+
+*** Communication Protocols
+
+Effective communication protocols are essential for the seamless operation of distributed parking management systems. These protocols enable reliable data transmission between sensors, IoT devices, and central management systems, ensuring that real-time information is available for decision-making.
+
+**** Commonly Used Communication Protocols
+
+1. *Wi-Fi*: Wi-Fi is widely used in urban environments for its high data transfer rates and extensive coverage. It is suitable for parking management systems that require real-time data transmission and interaction with user devices.
+
+2. *LoRaWAN (Long Range Wide Area Network)*: LoRaWAN is a low-power, wide-area networking protocol designed for IoT applications. It offers long-range communication capabilities and is ideal for parking management systems that need to cover large areas with minimal power consumption.
+
+3. *NB-IoT (Narrowband Internet of Things)*: NB-IoT is a cellular communication protocol optimized for low-bandwidth IoT applications. It provides robust coverage and high reliability, making it suitable for parking sensors and other low-power devices.
+
+4. *Zigbee*: Zigbee is a low-power, mesh networking protocol commonly used in IoT applications. It is suitable for creating localized networks of sensors and devices, offering reliable communication with low power consumption.
+
+5. *Bluetooth Low Energy (BLE)*: BLE is used for short-range communication between devices. It is particularly useful for enabling interactions between mobile devices and parking infrastructure, such as smart parking meters and vehicle detection units.
+
+*** Data Processing and Analytics
+
+Data processing and analytics are critical components of modern parking management systems. They involve the collection, storage, and analysis of data generated by sensors and IoT devices to provide actionable insights and optimize parking operations.
+
+**** Data Processing Techniques
+
+1. *Edge Computing*: Edge computing involves processing data locally on IoT devices or gateways before transmitting it to central servers. This approach reduces latency and bandwidth usage, enabling real-time decision-making and improving the responsiveness of the parking management system.
+
+2. *Cloud Computing*: Cloud computing provides scalable and flexible resources for storing and analyzing large volumes of data. Parking management systems can leverage cloud platforms to perform complex data analytics, generate predictive models, and integrate with other smart city services.
+
+3. *Machine Learning and AI*: Machine learning (ML) and artificial intelligence (AI) techniques are used to analyze historical and real-time data to predict parking space availability, optimize parking allocation, and detect anomalies. These techniques enhance the efficiency and reliability of parking management systems by enabling adaptive and intelligent decision-making.
+
+**** Analytics and Visualization
+
+1. *Descriptive Analytics*: Descriptive analytics involves summarizing historical data to understand past trends and patterns. This type of analysis helps in identifying peak usage times, common issues, and overall system performance.
+
+2. *Predictive Analytics*: Predictive analytics uses statistical models and ML algorithms to forecast future events, such as parking space availability and traffic patterns. This information can be used to optimize parking operations and provide users with real-time updates on parking availability.
+
+3. *Prescriptive Analytics*: Prescriptive analytics recommends actions based on data insights and predictive models. For example, it can suggest optimal parking allocations or adjustments to pricing strategies to balance demand and supply.
+
+4. *Data Visualization*: Data visualization tools and dashboards present complex data in an easily understandable format. These tools help system operators monitor parking space occupancy, track key performance indicators (KPIs), and make informed decisions.
+
+The integration of advanced sensors, IoT devices, robust communication protocols, and sophisticated data processing techniques forms the backbone of a distributed parking management system. These technologies work together to enhance the efficiency, scalability, and user-friendliness of parking operations in smart cities.
 ** Existing Implementation
+Parking management systems (PMS) have evolved significantly over the past few decades, incorporating advanced technologies to address the growing challenges of urban mobility. The implementation of these systems varies widely across different cities and regions, each aiming to improve parking efficiency, reduce traffic congestion, and enhance user convenience. This chapter explores several notable implementations of parking management systems worldwide, providing insights into their design, technologies used, and the outcomes achieved. By examining these existing implementations, we can identify best practices and common challenges that will inform the development of a more effective distributed parking management system for smart cities.
+
+*** Case Studies
+
+The exploration of existing parking management systems reveals a diverse range of implementations, each leveraging different technologies and methodologies to address urban parking challenges. This section presents a selection of case studies that highlight various approaches and their outcomes, providing valuable insights into the strengths and weaknesses of current systems.
+
+1. SFpark - San Francisco, USA
+
+SFpark, a smart parking system implemented in San Francisco, aims to reduce traffic congestion and improve parking availability. The system utilizes real-time data from sensors installed in parking spaces to monitor occupancy. Drivers can access this information via a mobile app, allowing them to find available spaces more efficiently.
+
+*Key Features:*
+- Real-time occupancy data collection using in-ground sensors.
+- Dynamic pricing model that adjusts parking rates based on demand.
+- Integration with a mobile app for user convenience.
+- Data analytics to inform urban planning and policy decisions.
+
+*Outcomes:*
+SFpark successfully reduced the time spent searching for parking, decreased traffic congestion, and optimized parking space utilization. However, the high cost of sensor installation and maintenance posed significant financial challenges.
+
+2. Smart Parking System - Barcelona, Spain
+
+Barcelona's smart parking system focuses on integrating various technologies to enhance urban mobility. The system employs IoT devices, such as cameras and sensors, to monitor parking spaces and provide real-time data to users via a centralized platform.
+
+*Key Features:*
+- Use of IoT devices for real-time monitoring and data collection.
+- Centralized platform for data integration and user access.
+- Mobile app providing real-time information on parking availability.
+- Collaboration with public transportation to promote multimodal transport options.
+
+*Outcomes:*
+The system improved parking efficiency and reduced congestion in key areas of the city. However, challenges included ensuring the reliability of IoT devices and addressing data privacy concerns.
+
+3. ParkRight - London, UK
+ParkRight is a parking management system implemented in Westminster, London. The system uses a combination of mobile technology and sensor data to help drivers locate available parking spaces. It also includes features for digital payment and parking enforcement.
+
+*Key Features:*
+- Mobile app for locating parking spaces and making digital payments.
+- Sensors for real-time monitoring of parking occupancy.
+- Integration with parking enforcement to ensure compliance.
+
+*Outcomes:*
+ParkRight enhanced user convenience and streamlined the parking process. The integration of digital payment options was particularly well-received. However, the system faced challenges related to sensor accuracy and data integration.
+
+*** Comparative Analysis
+
+A comparative analysis of the case studies highlights the diverse approaches to parking management and the varying degrees of success achieved by each system. Key factors influencing the effectiveness of these implementations include the choice of technology, system architecture, user interface design, and integration with existing urban infrastructure.
+
+*Technology and Architecture:*
+- *SFpark* and *ParkRight* both utilize in-ground sensors for real-time data collection, while *Barcelona's system* leverages a wider array of IoT devices. The choice of sensors affects the system's accuracy and maintenance costs.
+- Centralized platforms, as seen in Barcelona, provide comprehensive data integration but can create single points of failure. In contrast, distributed architectures may enhance system reliability and scalability.
+
+*User Interface and Experience:*
+- Mobile apps are a common feature, providing real-time information and user convenience. However, the effectiveness of these apps depends on their design, usability, and the accuracy of the data provided.
+- Dynamic pricing models, like that of SFpark, can influence user behavior and optimize space utilization but require careful calibration to avoid user dissatisfaction.
+
+*Integration and Scalability:*
+- Integration with public transportation, as seen in Barcelona, promotes multimodal transport and reduces reliance on private vehicles. This holistic approach can enhance overall urban mobility.
+- Scalability remains a challenge for all systems, particularly those relying on extensive sensor networks. Ensuring consistent performance across different urban areas requires robust infrastructure and effective data management.
+
+*Outcomes and Challenges:*
+- All systems reported improvements in parking efficiency and reductions in traffic congestion. However, common challenges included high implementation and maintenance costs, sensor reliability issues, and data privacy concerns.
+- The success of a parking management system also depends on user adoption and compliance. Systems that offer seamless user experiences and clear benefits are more likely to achieve widespread acceptance.
+
+In conclusion, the case studies demonstrate that while current parking management systems offer significant benefits, they also face notable challenges. By learning from these implementations and addressing their limitations, the development of a distributed parking management system can achieve greater scalability, reliability, and user adaptability, ultimately contributing to the advancement of smart city initiatives.
 * Design
 ** Overview and Requirements
 The parking management system designed during this project is designed to be a fully distributed system capable of managing the parking spaces in a wide variety of communities and facilities.
 Its goal is to reduce the traffic congestion and the pollution in the cities, and to improve the quality of life of the citizens easing the management of the parking spaces in a community.
 
+*** User Requirements
 The system has several requirements that must be met in order to be able to achieve its goal. These requirements are the following:
 
-*** Fault Tolerant
+**** Fault Tolerant
 The system must be distributed, that is to say, the workloads must have redundancy built in place reducing the single point of failures.
 This is because the system must be able to work even if there are internet cuts, and it must be able to withstand any situation where there is a service cut.
 
-*** Secure
+**** Secure
 The system must be able to store the data encrypted in the user's device.
 This is because the data must be secure at all times, and it must be resistant to any intruder that tries to access it.
 
 Moreover, all communications between the devices must be encrypted to protect the data from any man in the middle attacks [cite:@man_in_the_middle].
 
-*** Scalable
+**** Scalable
 The system must be able to cope with any size of community or facility. For this purpose, the system must be able to scale horizontally, that is to say, it must be able to add new devices to the system in a secure and easy way in order to increase the capacity of the system.
 
-*** Easy to use
+**** Easy to use
 The system must be simple and easy to use, so anyone can use it. The system must be complex enough to manage the parking spaces in a community, but it must be simple enough to be used by anyone.
 
 Moreover, it must be able to be used on every computer or device possible, so the users do not have to worry about the compatibility of the system.
 
-*** Automated
+**** Automated
 The system must be able to be upgraded and managed automatically. This is because the system must be able to support automatic updates and backups, so the users do not have to worry about the system being outdated or losing the data.
 
 Moreover, the system must be able to send automatic alerts to the users when a parking space is available, or when an intruder is detected in the parking spaces.
 
-*** Cost-effective
+**** Cost-effective
 The system must be cost-effective, that is to say, it must be able to save costs by automating the management of the parking spaces and eliminating the need of a person to be present all the time.
 
+*** System Requirements
 ** Architecture
 For the design of the system, a distributed architecture will be used. This is because the system must be able to manage the parking spaces in a community, and it must be able to work on every computer or device possible.
 
@@ -199,67 +355,64 @@ For the design of the system, a distributed architecture will be used. This is b
 
 An overview of the system is shown in the diagram depecited in Figure TODO. In this diagram, the main components of the system are shown, which are:
 
-*** Terminals
-The terminals are the main application of the system.
-They will be used to manage the parking spaces in a community.
-The main features of the terminals are the following:
-
-- Host the main application of the system where the users can manage the parking spaces in a community.
-- Store the data encrypted in the user's device to protect the privacy of the users.
-- Host the ML model that will be used to run the plate recognition system.
-- Backup the data automatically to avoid losing the data.
-- Support automatic updates to avoid the system being outdated.
-
-**** Database
-The database that will be using is a SQL database. This is because the data is structured and the system must be able to manage the parking spaces in a community. Moreover, the data must be secure, and the system must be able to work on every computer or device possible.
-
-**** ML model
-The ML model that will be used is a plate recognition system. This is because the system must be able to recognize the plates of the cars that are parked in the parking spaces. Moreover, the system must be able to manage the parking spaces in a community.
-
-*** Web server
-The server will be used to show the data and manage the parking spaces in a friendly way so users can easily manage the parking spaces. The main features of the server are the following:
-
-- Show the data and manage the parking spaces in a friendly way so users can easily manage the parking spaces.
-- Be able to detect all the communities that a user is part of and show the parking spaces of each community.
-- Be able to show the parking spaces in a map so users can easily see where they are.
-
-*** Backup storage
-*** Automation servers
+*** System Architecture
+*** Network Architecture
 ** Technologies and Hardware
-*** Terminals
-*** Web servers
-In order to have a server where users can manage the parking spaces in a community, a cloud service will be used.
-
-**** Comparison
-
-
-*** Programming languages
-*** Communications
-*** Libraries
-*** Tools
+*** Selection Criteria
+*** Description of Selected Technologies
+*** Hardware Components
 ** Design
-*** UML
-*** ER
-*** Flowcharts
-*** Mockups
-*** Schemas
+*** System Design
+*** User Interface Design
 * Implementation and Development
 ** Implementation
+*** System Components
+*** Integration
+
 ** Methodology
+*** Development Methodology
+*** Tools and Frameworks
 ** Planning
-** Design
+*** Project Timeline
+*** Milestones
+** Detailed Design
+*** Software Design
+*** Database Design
+*** Communication Design
 ** Implementation
+*** Coding Standards
+*** Development Process
 ** Testing
+*** Testing Methodology
+*** Test Cases and Scenarios
 ** Deployment
+*** Deployment Strategy
+*** Environment Setup
 ** Maintenance
+*** Maintenance Plan
+*** Update and Upgrade Strategy
 * Results
 ** Performance
+*** Performance Metrics
+*** Benchmarking
 ** Scalability
+*** Scalability Testing
+*** Results Analysis
 ** Security
+*** Security Requirements
+*** Security Testing
 ** Usability
+*** User Feedback
+*** Usability Testing
 ** Reliability
+*** Reliability Metrics
+*** Reliability Testing
 ** Availability
+*** Availability Metrics
+*** Availability Testing
 ** Costs
+*** Cost Analysis
+*** Cost-Benefit Analysis
 * Conclusions
 ** Conclusions
 ** Future works
@@ -279,3 +432,239 @@ Additionally, the system will be able to send automatic alerts to the users when
 * Bibliography :ignore:
 #+print_bibliography:
 #+latex: \addcontentsline{toc}{chapter}{Bibliography} % add bibliography to the TOC
+
+* Prompt :noexport:
+<situation begin>
+You are a researcher and undergrad student of the "Dual Bachelor in Data Science and Engineering and Telecommunication Technologies Engineering". You are writing your bachelor thesis of the Telecommunication Bachelor in "Design and Implementation of a Distributed Parking Management System for Smart Cities"
+
+<project begin>
+The main objective of this bachelor thesis is the design and implementation of a fully distributed parking management system for the next generation of smart cities.
+
+More specifically, the objectives of this project are the following:
+1. To research the current parking management systems and the main problems that they have. From studying the requirements of the users to the technologies that are used to create the systems.
+2. To analyze the current parking management systems and the technologies that can be used to create a distributed system.
+3. To design the infrastructure of the system, including the architecture, the technologies, and the design.
+4. To develop the system, following a methodology that includes planning, design, implementation, testing, deployment, and maintenance.
+5. To analyze the results of the project, including the performance, scalability, security, usability, reliability, availability, and costs of the system.
+<project end>
+
+You have been working on the project for a few months now and you have already done a study of the current parking management systems and the main problems that they have. You have also analyzed the current parking management systems and the technologies that can be used to create a distributed system. You have designed the infrastructure of the system, including the architecture, the technologies, and the design. You have also developed the system, following a methodology that includes planning, design, implementation, testing, deployment, and maintenance.
+
+Now, you are writing the bachelor thesis. You will be given instructions on what to write in each chapter of the thesis and you must stuck to a strict format based on scientific writing such as
+
+<scientific writing begin>
+The academic style in the writing of a TFG is different from styles that are normally used: it must be formal, but at the same time clear and comprehensible.
+The writing must be grammatically correct, in particular the spelling and punctuation.
+The text must be written from an impersonal point of view, never in the first person
+Use the present tense for generally accepted facts:
+he law of civil procedure notes
+Use the past tense to describe your own work:
+Refrain from subjectivity in both the content and the tone of the writing, avoiding ambiguity or colloquialisms:
+If you use some terms in other languages you must indicate their translation the first time the term appears in each chapter and write the term in italics or between quotation marks.
+Include one idea in each paragraph.
+Avoid idioms and popular sayings:
+It's not rocket science
+Break the bank
+Sustitute expressions for words:
+Avoid sexist language
+<scientific writing end>
+
+<table of contents begin>
+I. *Introduction*
+   1. General Understanding and Relevance of Parking Management Systems
+   2. Motivation
+   3. Objectives
+   4. Outline of the Work
+
+II. State of the Art
+
+    Overview of Parking Management Systems
+        Historical Development
+        Modern Trends and Challenges
+    Distributed Systems
+        Definition and Characteristics
+        Advantages and Disadvantages in Parking Management
+    Technologies
+        Sensors and IoT Devices
+        Communication Protocols
+        Data Processing and Analytics
+    Existing Implementations
+        Case Studies
+        Comparative Analysis
+
+III. Design
+
+    Overview and Requirements
+        User Requirements
+        System Requirements
+    Architecture
+        System Architecture
+        Network Architecture
+    Technologies and Hardware
+        Selection Criteria
+        Description of Selected Technologies
+        Hardware Components
+    Design
+        System Design
+        User Interface Design
+
+IV. Implementation and Development
+
+    Implementation
+        System Components
+        Integration
+    Methodology
+        Development Methodology
+        Tools and Frameworks
+    Planning
+        Project Timeline
+        Milestones
+    Detailed Design
+        Software Design
+        Database Design
+        Communication Design
+    Implementation
+        Coding Standards
+        Development Process
+    Testing
+        Testing Methodology
+        Test Cases and Scenarios
+    Deployment
+        Deployment Strategy
+        Environment Setup
+    Maintenance
+        Maintenance Plan
+        Update and Upgrade Strategy
+
+V. Results
+
+    Performance
+        Performance Metrics
+        Benchmarking
+    Scalability
+        Scalability Testing
+        Results Analysis
+    Security
+        Security Requirements
+        Security Testing
+    Usability
+        User Feedback
+        Usability Testing
+    Reliability
+        Reliability Metrics
+        Reliability Testing
+    Availability
+        Availability Metrics
+        Availability Testing
+    Costs
+        Cost Analysis
+        Cost-Benefit Analysis
+
+VI. Conclusions
+
+    Conclusions
+    Future Works
+    Socio-Economic Environment
+    Regulatory Framework
+<table of contents end>
+
+<introduction of the thesis begin>
+#Introduction
+## General understanding and relevance of parking management systems
+In recent years, the exponential increase in the number of vehicles has exacerbated urban challenges, notably in parking management. For instance, the surge in car usage in Madrid has significantly contributed to increased pollution levels [cite:@environmental_imapct_madrid_central]. Despite a stable number of parking spaces in Spain between 2014 and 2020 [cite:@urban_mobility_trends], the demand has led to higher costs and greater difficulty in securing parking, thereby increasing time spent searching for spaces, traffic congestion, and urban pollution.
+
+Current parking management in Spain predominantly relies on human intervention, where personnel are responsible for regulating access to parking spaces. This manual approach often results in delays, inadequate information dissemination, and inefficient control over parking availability.
+
+Advancements in technology offer promising solutions to these issues. The proliferation of internet-connected devices, which have grown by 20% year-over-year [cite:@iot_growth], has facilitated the development of Internet of Things (IoT)-based parking management systems. These systems aim to mitigate traffic congestion and reduce pollution in urban areas.
+
+A parking management system (PMS) is designed to optimize the utilization of parking spaces within a city, community, or building. The primary objectives of a PMS include automating parking space management, recording vehicle transit, and enhancing overall operational efficiency.
+
+PMSs provide numerous benefits in modern urban settings. They contribute to reducing traffic congestion and pollution, thereby improving urban mobility and the quality of life for residents. Additionally, PMSs enhance security by monitoring vehicle movements within parking areas, which aids in crime prevention.
+
+These systems share several common features:
+- Automation of parking space management.
+- Application in various areas such as cities, communities, or buildings.
+- Documentation of vehicle transit within parking spaces.
+
+The integration of PMSs into urban infrastructure not only addresses parking-related issues but also aligns with broader smart city initiatives aimed at enhancing urban living conditions.
+
+## Motivation
+Parking management systems remain a critical area of research and development, even though manual parking management has been utilized for many years. Research published in [cite:@parking_choices] indicates that the type of parking management system significantly influences the parking choices of citizens. Additionally, citizens tend to prefer systems that are user-friendly, secure, and reliable.
+
+Currently, parking management systems in Spain largely rely on human intervention, leading to several issues such as delays in availability, lack of information, and insufficient control of parking spaces. Continuous human presence is required to maintain the functionality of these systems throughout the day, which increases operational costs.
+
+To address these issues, recent technological advancements have emerged. For instance:
+- RFID-based smart parking management systems [cite:@rfid_smart_parking_management_system] have been developed to manage the transit of vehicles within parking spaces.
+- IoT-based smart parking management systems [cite:@development_smart_parking_management_system] have been designed to manage parking spaces within a community.
+- Intelligent parking systems utilizing image processing [cite:@intelligent_parking_system_image_processing] have been proposed to recognize license plates of parked vehicles.
+
+Despite these advancements, several challenges persist. Current parking management systems are typically centralized, which presents scalability and reliability issues in the event of service interruptions. Additionally, these systems often lack customization options, making it difficult to adapt to user-specific needs.
+
+Given these challenges, the primary objective of this project is to design and implement a fully distributed parking management system that addresses the limitations of current systems, focusing on enhancing scalability, reliability, and user adaptability.
+
+## Objectives
+The primary objective of this bachelor thesis is to design and implement a fully distributed parking management system tailored for the next generation of smart cities. This project aims to address the inefficiencies and challenges inherent in current parking management systems through a distributed approach that leverages modern technologies.
+
+Specifically, the objectives of this project are as follows:
+
+1. *Research Current Systems*: Conduct a comprehensive study of existing parking management systems, identifying their main problems. This involves understanding user requirements, analyzing the technologies employed, and evaluating system effectiveness.
+
+2. *Technology Analysis*: Analyze the technologies currently used in parking management systems to determine their suitability for a distributed architecture. This includes examining sensors, Internet of Things (IoT) devices, communication protocols, and data processing methods.
+
+3. *System Infrastructure Design*: Design the overall infrastructure of the distributed parking management system. This encompasses defining the system architecture, selecting appropriate technologies, and developing detailed design specifications.
+
+4. *System Development*: Develop the system by adhering to a structured methodology that includes phases of planning, design, implementation, testing, deployment, and maintenance. Each phase will follow best practices to ensure the system's robustness and efficiency.
+
+5. *Performance Analysis*: Evaluate the implemented system based on various criteria such as performance, scalability, security, usability, reliability, availability, and cost. This comprehensive analysis will help in assessing the effectiveness of the system and identifying areas for improvement.
+
+Through these objectives, the thesis aims to contribute to the advancement of smart city technologies by providing a scalable, secure, and user-friendly parking management solution. The distributed nature of the proposed system is expected to enhance its performance and reliability, making it a viable option for modern urban environments.
+
+## Outline of the work
+This thesis is structured into several comprehensive chapters, each targeting specific objectives and tasks essential to the development of a distributed parking management system for smart cities.
+
+The first chapter provides an in-depth study of existing parking management systems, focusing on their features and identifying key issues. This analysis serves as the foundation for understanding the requirements and challenges faced in current systems.
+
+The second chapter delves into the technologies that can be employed to create a distributed parking management system. It encompasses an initial evaluation of both software and hardware components, along with the necessary infrastructure to support such a system.
+
+The third chapter covers the implementation phase of the project. It follows a systematic methodology that includes planning, design, implementation, testing, deployment, and maintenance. Each stage is meticulously documented to ensure clarity and reproducibility.
+
+In the fourth chapter, the results of the implemented system are thoroughly analyzed. This analysis includes assessments of performance, scalability, security, usability, reliability, availability, and costs. Each aspect is evaluated using appropriate metrics and benchmarks to provide a comprehensive understanding of the system's effectiveness.
+
+Finally, the fifth chapter presents the conclusions drawn from the research and development process. It also outlines potential future work, considering advancements that could further enhance the system. Additionally, this chapter discusses the socio-economic impact and regulatory framework relevant to the deployment of a distributed parking management system in smart cities.
+
+This structured approach ensures a logical progression through the research, design, implementation, and evaluation phases, providing a detailed and professional documentation of the project.
+
+<introduction of the thesis end>
+<situation end>
+
+
+<paragraph example begin>
+Heading: Outline of the work
+
+The project will be divided into several phases, each one with its own objectives and tasks.
+
+In the first chapter, a study of the current parking management systems will be done to analyze the features and the main problems that they have.
+
+In the second chapter, a initial study of the technologies that can be used to create a distributed parking management system will be done. This will include the software and hardware that can be used to create the system and the infrastructure that will be needed.
+
+In the third chapter, the implementation of the system will be done, following a methodology that includes planning, design, implementation, testing, deployment, and maintenance.
+
+In the fourth chapter, the results of the project will be analyzed, including the performance, scalability, security, usability, reliability, availability, and costs of the system.
+
+And finally, in the fifth chapter, the conclusions and future works will be presented.
+<paragraph example end>
+
+<task begin>
+Write the following paragraphs and fill the headings below.
+
+#State of the art
+## Existing Implementation
+### Case Studies
+### Comparative Analysis
+
+Also feel free to add more if you think it will be professional and beneficial.
+
+Focus on doing the best job you can possibly do, and don't worry about the length of the text. The most important thing is to provide a high-quality text that is well-written and well-structured. You can use the information provided in the prompt to write the text, but you can also use your own knowledge and experience to write the text.
+
+Feel free to ask any questions if you need help with the task and do not hesitate to ask for feedback on your work. You can do it in multiple steps if you prefer, and you can also ask for feedback on each step if you want to.
+<task end>
