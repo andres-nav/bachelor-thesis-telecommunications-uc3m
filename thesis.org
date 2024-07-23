@@ -44,13 +44,13 @@
 #+latex: \begingroup
 #+latex: \let\clearpage\relax % This temporarily disables \clearpage
 
-According to [cite:@smith2020], this is an example citation.
+Thanks
 
 #+latex: \chapter*{Agradecimientos}
 
 Gracias
-#+latex: \endgroup
 
+#+latex: \endgroup
 #+latex: \blankpage
 
 ** Table of Contents :ignore:
@@ -62,6 +62,7 @@ Gracias
 #+latex: \makeatother
 
 #+latex: \blankpage
+
 ** List of Figures :ignore:
 #+latex: \chapter*{List of Figures}
 
@@ -84,7 +85,9 @@ Gracias
 #+latex: \mainmatter
 * Introduction
 ** General understanding and relevance of parking management systems
-In recent years, the exponential increase in the number of vehicles has exacerbated urban challenges, notably in parking management. For instance, the surge in car usage in Madrid has significantly contributed to increased pollution levels [cite:@environmental_imapct_madrid_central]. Despite a stable number of parking spaces in Spain between 2014 and 2020 [cite:@urban_mobility_trends], the demand has led to higher costs and greater difficulty in securing parking, thereby increasing time spent searching for spaces, traffic congestion, and urban pollution.
+In recent years, the exponential increase in the number of vehicles has aggravated urban challenges, notably in parking management. For instance, the surge in car usage in Madrid has significantly contributed to an increase in pollution levels [cite:@environmental_imapct_madrid_central]. Despite a stable number of parking spaces in Spain between 2014 and 2020 [cite:@urban_mobility_trends], the demand has led to higher costs and greater difficulty in securing parking, thereby increasing time spent searching for spaces, traffic congestion, and urban pollution.
+
+TODO: explain what is a parking management system
 
 Current parking management in Spain predominantly relies on human intervention, where personnel are responsible for regulating access to parking spaces. This manual approach often results in delays, inadequate information dissemination, and inefficient control over parking availability.
 
@@ -139,13 +142,11 @@ The first chapter provides an in-depth study of existing parking management syst
 
 The second chapter delves into the technologies that can be employed to create a distributed parking management system. It encompasses an initial evaluation of both software and hardware components, along with the necessary infrastructure to support such a system.
 
-The third chapter covers the implementation phase of the project. It follows a systematic methodology that includes planning, design, implementation, testing, deployment, and maintenance. Each stage is meticulously documented to ensure clarity and reproducibility.
+The third chapter covers the implementation phase of the project. It follows a systematic methodology that includes planning, design, implementation, testing, deployment, and maintenance.
 
 In the fourth chapter, the results of the implemented system are thoroughly analyzed. This analysis includes assessments of performance, scalability, security, usability, reliability, availability, and costs. Each aspect is evaluated using appropriate metrics and benchmarks to provide a comprehensive understanding of the system's effectiveness.
 
 Finally, the fifth chapter presents the conclusions drawn from the research and development process. It also outlines potential future work, considering advancements that could further enhance the system. Additionally, this chapter discusses the socio-economic impact and regulatory framework relevant to the deployment of a distributed parking management system in smart cities.
-
-This structured approach ensures a logical progression through the research, design, implementation, and evaluation phases, providing a detailed and professional documentation of the project.
 
 *** TODO add links to each chapter
 * State of the art
@@ -248,7 +249,7 @@ Data processing and analytics are critical components of modern parking manageme
 4. *Data Visualization*: Data visualization tools and dashboards present complex data in an easily understandable format. These tools help system operators monitor parking space occupancy, track key performance indicators (KPIs), and make informed decisions.
 
 The integration of advanced sensors, IoT devices, robust communication protocols, and sophisticated data processing techniques forms the backbone of a distributed parking management system. These technologies work together to enhance the efficiency, scalability, and user-friendliness of parking operations in smart cities.
-** Existing Implementation
+** Existing Implementations
 Parking management systems (PMS) have evolved significantly over the past few decades, incorporating advanced technologies to address the growing challenges of urban mobility. The implementation of these systems varies widely across different cities and regions, each aiming to improve parking efficiency, reduce traffic congestion, and enhance user convenience. This chapter explores several notable implementations of parking management systems worldwide, providing insights into their design, technologies used, and the outcomes achieved. By examining these existing implementations, we can identify best practices and common challenges that will inform the development of a more effective distributed parking management system for smart cities.
 
 *** Case Studies
@@ -313,60 +314,81 @@ A comparative analysis of the case studies highlights the diverse approaches to 
 - The success of a parking management system also depends on user adoption and compliance. Systems that offer seamless user experiences and clear benefits are more likely to achieve widespread acceptance.
 
 In conclusion, the case studies demonstrate that while current parking management systems offer significant benefits, they also face notable challenges. By learning from these implementations and addressing their limitations, the development of a distributed parking management system can achieve greater scalability, reliability, and user adaptability, ultimately contributing to the advancement of smart city initiatives.
-* Design
-** Overview and Requirements
-The design of an effective distributed parking management system necessitates a comprehensive understanding of both user and system requirements. This section aims to outline the key needs and expectations of the primary stakeholders, including drivers, parking facility managers, and city administrators, to ensure that the system meets their specific demands. Additionally, it will detail the technical and functional specifications required to build a robust, scalable, and secure system. By addressing these requirements, the foundation is laid for the development of a user-centric and technologically advanced parking management solution that integrates seamlessly into the smart city ecosystem.
+* REVW Design
+** Requirements
+The parking management system developed for this project was designed to ensure that it met the needs of drivers, parking facility managers, and city administrators.
+The system was designed to address the limitations of current parking management systems, focusing on enhancing scalability, reliability, and user adaptability.
+
+For this purpose, different user requirements were identified, and system requirements were defined to meet these needs.
+Furthermore, the system was designed to incorporate specific technical and functional specifications to ensure its effectiveness and efficiency.
 
 *** User Requirements
-In designing a distributed parking management system, it is crucial to address the needs and preferences of the end-users. The primary users of the system include drivers, parking facility managers, and city administrators. The requirements of these users are as follows:
+The user requirements for the distributed parking management system were identified through a comprehensive analysis of the needs and preferences of drivers, parking facility managers, city administrators and users with disabilities.
+These requirements were essential to ensure that the system was user-friendly, efficient, and aligned with the objectives of smart city initiatives [cite:@smart_cities_initiatives].
 
-1. **Drivers**:
-   - **Real-time Information**: Access to real-time data regarding available parking spaces to minimize the time spent searching for parking.
-   - **Ease of Use**: A user-friendly interface that allows for quick and easy navigation through the system.
-   - **Security**: Assurance that their vehicles are parked in a secure environment.
-   - **Convenient Payment Methods**: Integration with various payment options, including mobile payments and contactless payment methods.
-   - **Reservation Capability**: Ability to reserve parking spaces in advance.
+The requirements of the primary users were as follows:
 
-2. **Parking Facility Managers**:
-   - **Operational Efficiency**: Tools to monitor and manage parking facilities effectively.
-   - **Data Analytics**: Access to detailed reports and analytics on parking usage patterns to optimize space utilization.
-   - **Maintenance Alerts**: Notification system for maintenance issues such as broken sensors or barriers.
-   - **Security Features**: Enhanced security measures, including surveillance and access control.
+For drivers, the system needed to provide real-time information about available parking spaces to minimize search time.
+This was crucial to reduce traffic congestion and pollution in urban areas.
+Moreover, drivers expected an easy-to-use interface for quick navigation and more importantly, automatic functionality of the system without the need for human intervention.
+That way, they did not have to worry about the availability of parking spaces and could focus on other tasks.
 
-3. **City Administrators**:
-   - **Scalability**: The system should be easily scalable to accommodate growing urban areas.
-   - **Integration with Smart City Initiatives**: Seamless integration with other smart city systems such as traffic management and public transport.
-   - **Regulatory Compliance**: Compliance with local regulations and standards for data privacy and security.
-   - **Environmental Impact**: Tools to monitor and minimize the environmental impact of parking facilities.
+Parking facility managers required tools to monitor and manage their facilities efficiently, as well as access to detailed reports and analytics on parking usage patterns to optimize space utilization.
+A notification system for intrusions such as unauthorized parking or security breaches was also essential to ensure the safety of the parking facilities.
+Enhanced security measures, including surveillance and access control, were a must-have for them.
+
+On the other hand, city administrators needed a system that could provide insights into parking demand and usage trends to inform urban planning decisions.
+The system should support the integration of parking data with other smart city initiatives to enhance overall urban mobility and sustainability.
+Moreover, city administrators required tools to monitor and minimize the environmental impact of parking facilities, such as reducing emissions and energy consumption.
+The system should also comply with local regulations and standards for data privacy and security such as GDPR [cite:@gdpr].
+
+Finally, users with disabilities needed accessibility features such as voice commands, screen readers, and other assistive technologies to ensure that they could use the system effectively.
+These features were essential to promote inclusivity and ensure that all users could benefit from the distributed parking management system.
+Moreover, the system should be designed to accommodate users with different needs and preferences, ensuring a seamless user experience for everyone.
 
 *** System Requirements
-To meet the user requirements, the distributed parking management system must incorporate specific technical and functional specifications:
+For the distributed parking management system to meet the user requirements, it had to incorporate specific system requirements.
+These requirements were defined to ensure that the system was scalable, reliable, secure, and user-friendly, aligning with the objectives of smart city initiatives as well as the needs of drivers, parking facility managers, and city administrators.
+The system requirements were essential to guide the design and development of the distributed parking management system, ensuring that it met the expectations of all stakeholders and delivered the desired outcomes.
 
-1. **Functionality**:
-   - **Real-time Monitoring**: Capability to monitor parking space availability in real-time using sensors and IoT devices.
-   - **Reservation System**: Implementation of a reservation system for drivers to book parking spaces in advance.
-   - **Payment Integration**: Support for multiple payment methods, including digital wallets and contactless payments.
-   - **Data Analytics**: Advanced analytics and reporting features for facility managers and city administrators.
+The main system requirements were as follows:
 
-2. **Scalability and Flexibility**:
-   - **Distributed Architecture**: A scalable distributed architecture to handle large volumes of data and a growing number of users.
-   - **Modularity**: Modular design to allow for easy updates and integration of new features.
-   - **Interoperability**: Compatibility with existing and future smart city infrastructure.
+For the real-time monitoring of parking space availability, the system needed to incorporate sensors and IoT devices to detect vehicle presence and occupancy.
+These sensors had to be accurate, reliable, and cost-effective to provide up-to-date information on parking availability.
 
-3. **Security and Reliability**:
-   - **Data Security**: Robust security measures to protect user data and ensure privacy.
-   - **System Reliability**: High availability and reliability to ensure continuous operation.
-   - **Redundancy**: Redundant systems to prevent data loss and maintain functionality during failures.
+Reservation was another key requirement, allowing drivers to be assigned a specific number of parking spaces in advance to ensure that they could secure a spot when needed.
+The reservation system had to be integrated with the monitoring system to ensure that drivers could find available spaces.
 
-4. **User Interface**:
-   - **Intuitive Design**: User-friendly interfaces for drivers, facility managers, and city administrators.
-   - **Mobile Accessibility**: Mobile-friendly design for drivers to access the system on the go.
-   - **Accessibility Features**: Inclusion of features to support users with disabilities.
+The system also needed to be self-sufficient, with automated gate and barrier control to regulate access to parking facilities.
+It had to be capable of managing multiple parking facilities simultaneously, ensuring that drivers could access the system from different locations.
+And it had to be able to function without human intervention, reducing the need for manual oversight.
 
-** Architecture
-The architecture of the distributed parking management system is designed to optimize efficiency, scalability, and reliability, addressing the complexities of modern urban environments. By leveraging cutting-edge technologies and a robust network infrastructure, this system aims to provide real-time monitoring and management of parking spaces, enhance user experience, and support seamless integration with other smart city initiatives. The architecture is structured around key components including IoT sensors, edge computing nodes, a centralized cloud server, and a sophisticated communication network. This comprehensive design ensures that the system can handle large volumes of data, offer high availability, and provide a secure and intuitive interface for users ranging from drivers to city administrators.
+Moreover, the system had to be scalable and flexible, with a distributed architecture that could handle large volumes of data and a growing number of users.
+It had to support additional number of communities and parking facilities, ensuring that it could adapt to changing requirements.
+For the system to be effective, modularity was essential, allowing for easy updates and integration of new features as needed.
+
+Security and availability were critical requirements for the system, ensuring that the system was robust and resilient against cyber threats and service interruptions.
+Interoperability was crucial to ensure compatibility with existing and future smart city infrastructure.
+
+Finally, the user interface had to be intuitive and user-friendly, with mobile accessibility for drivers and web-based interfaces for facility managers and city administrators.
+And accessibility features were needed to support users with disabilities, ensuring that the system was inclusive and accessible to all.
+
+** STRT Overview and Architecture
+The distributed parking management system was designed to address the limitations of current parking management systems, focusing on addressing the user and system requirements identified in the previous section.
+For this purpose, a comprehensive architecture was developed to ensure that the system was scalable, reliable, and user-friendly providing a new approach to parking management in smart cities.
+
+For the distributed parking management system to meet the user requirements and system requirements, a detailed overview and architecture were defined.
+
+The overview of the distributed parking management system provided a high-level description of the system components, functionalities, and interactions.
+This overview served as a roadmap for the development of the system, guiding the design and implementation of the architecture.
 
 *** System Architecture
+The system architecture of the distributed parking management system was designed to ensure scalability, reliability, and efficient data processing as the requirements specified.
+
+
+The main
+
+TODO add the system architecture image
 The system architecture of the distributed parking management system is designed to ensure scalability, reliability, and efficient data processing. The architecture consists of the following key components:
 
 1. **IoT Sensors and Devices**:
@@ -411,7 +433,36 @@ The network architecture supports the communication needs of the distributed par
    - **Firewall and Intrusion Detection**: Protects the network from unauthorized access and cyber threats.
    - **Virtual Private Network (VPN)**: Provides secure remote access for administrators and authorized users.
 
-** Technologies and Hardware
+*** STRT Specific Technical and Functional Specifications
+To ensure that the distributed parking management system met the user requirements and system requirements, specific technical and functional specifications were defined.
+These specifications were essential to guide the design and development of the system, ensuring that it was effective, efficient, and delivered the desired outcomes.
+
+To meet the demand for enhanced security and monitoring, high-quality cameras were incorporated for object detection, license plate recognition, and human recognition
+These cameras played a crucial role in the alert system and assisted parking facility managers in maintaining a secure environment
+They enabled real-time surveillance and the identification of unauthorized access, contributing to overall safety
+
+To ensure the system's functionality under various conditions, infrared capability was integrated for night vision and poor weather conditions
+This feature guaranteed continuous and reliable monitoring, irrespective of the time of day or weather, thereby enhancing the robustness of the security measures
+
+The inclusion of performant embedded computers was vital for efficient image processing and community management
+These computers facilitated rapid data analysis and processing, ensuring timely updates and responses
+They also supported the overall management of parking facilities, enabling real-time decision-making and efficient resource allocation
+
+To provide high availability and speed, 5G capabilities were integrated into the system
+This ensured that data transmission was fast and reliable, supporting real-time updates and communications across the distributed network of parking facilities
+It also facilitated seamless connectivity and interaction among all system components
+
+For enhanced reliability and uptime, distributed servers were employed to ensure high availability
+These servers provided redundancy and load balancing, minimizing the risk of service interruptions and ensuring that the system remained operational even during peak usage times or in the event of a server failure
+
+Additionally, an alert system was established to notify administrators of any downtime or high-risk situations
+This oversight mechanism ensured that any issues were promptly addressed, maintaining the system's reliability and security
+The alert system also enabled proactive management and quick responses to potential threats or operational inefficiencies
+
+In summary, these technical and functional specifications were critical in developing a robust, scalable, and user-friendly distributed parking management system
+They ensured that the system could effectively meet the needs of drivers, parking facility managers, city administrators, and users with disabilities while supporting the broader objectives of smart city initiatives.
+
+** TODO Technologies and Hardware
 The effective implementation of a distributed parking management system hinges on the strategic selection and integration of advanced technologies and robust hardware components. This section delves into the critical technologies and hardware elements that form the backbone of the system, ensuring it meets the demanding requirements of scalability, reliability, and efficiency in a smart city context. The chosen technologies encompass state-of-the-art IoT sensors, versatile communication protocols, and sophisticated data processing tools, all of which work in concert to deliver real-time monitoring and control capabilities. Additionally, the hardware components, ranging from edge computing devices to cloud infrastructure, are selected based on stringent criteria to guarantee optimal performance, security, and cost-effectiveness. By meticulously combining these technologies and hardware, the distributed parking management system aims to provide a seamless, user-friendly experience while enhancing operational efficiency and urban mobility.
 
 *** Selection Criteria
@@ -449,7 +500,7 @@ The selection of technologies and hardware for the distributed parking managemen
    - **Wi-Fi Routers**: Ensures reliable wireless communication within parking facilities.
    - **Network Switches**: Facilitates data transfer between edge nodes and the central server.
 
-** Design
+** TODO Design
 The design phase of the distributed parking management system is a critical component in ensuring the successful deployment and operation of the system. This phase encompasses a comprehensive overview of the requirements, system architecture, selected technologies, and hardware components, all of which are tailored to meet the needs of drivers, parking facility managers, and city administrators. The design also includes detailed plans for the user interface, ensuring a seamless and intuitive experience for all users. By leveraging modern IoT devices, advanced data processing techniques, and robust communication protocols, the design aims to create a scalable, reliable, and user-friendly parking management system. This section outlines the meticulous planning and decision-making processes that underpin the system's architecture, technology selection, and overall design, setting the foundation for its implementation and development.
 
 *** System Design
