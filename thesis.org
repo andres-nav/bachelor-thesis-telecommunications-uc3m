@@ -385,6 +385,16 @@ This overview served as a roadmap for the development of the system, guiding the
 *** System Architecture
 The system architecture of the distributed parking management system was designed to ensure scalability, reliability, and efficient data processing as the requirements specified.
 
+It consisted of the main hardware components, software components, and communication network that enabled the system to function effectively and meet the needs of drivers, parking facility managers, and city administrators.
+
+The main hardware components of the system included sensors, IoT devices, edge computing nodes, and centralized cloud servers.
+
+The sensors were deployed in parking spaces to detect the presence of vehicles, providing real-time data on parking availability.
+
+The IoT devices, such as gate and barrier control systems, surveillance cameras, and edge computing nodes, processed data from sensors and aggregated it before sending it to the central cloud server.
+
+The centralized cloud server served as the communication hub for the system, ensuring a secure and reliable connection between the users and the parking facilities. Moreover, it was responsible for the presentation layer as well as the data backup and orchestration of the system.
+
 
 The main
 
@@ -537,20 +547,20 @@ The user interface design focuses on providing a seamless and intuitive experien
    - **Analytics and Insights**: Access to detailed analytics and insights to support decision-making and urban planning initiatives.
 
 This structured and detailed approach to the design phase ensures that the distributed parking management system will be robust, efficient, and user-friendly, meeting the needs of all stakeholders involved.
-* Implementation and Development
+2. 6. * Implementation and Development
 ** Implementation
-The implementation phase of the distributed parking management system involves the integration of several key components to ensure seamless and efficient operation. These components include IoT sensors for real-time parking space monitoring, a centralized server for data processing and management, a mobile application for user interaction, and communication modules to facilitate data exchange. The integration process ensures that these components work cohesively, enabling accurate detection of parking space availability and providing users with real-time information. The system's design also incorporates robust security mechanisms to protect user data and ensure the integrity of the overall system.
+The implementation phase of the distributed parking management system involves the integration of several key components to ensure a seamless and efficient operation.
+These components includes IoT devices for real-time parking space monitoring, a centralized server for information relay, a mobile and web application for user interaction, and communication modules to facilitate data exchange between the devices.
+The integration process ensures that these components work cohesively, enabling accurate detection of parking space availability and providing users with real-time information. The system's design also incorporates robust security mechanisms to protect user data and ensure the integrity of the overall system.
 
 *** System Components
 The distributed parking management system comprises several key components designed to ensure efficient and reliable operation. These components include:
 
 1. **IoT Sensors**: Deployed in parking spaces to detect vehicle presence. These sensors transmit data to the central system, indicating space availability.
 2. **Centralized Server**: Manages data collection, processing, and dissemination. It handles user requests, processes sensor data, and maintains the system database.
-3. **Mobile Application**: Provides users with real-time information on parking space availability, reservation options, and navigation assistance.
-4. **User Interface**: Accessible via web and mobile platforms, offering features for parking management, user registration, payment processing, and support.
-5. **Database**: Stores information related to parking spaces, user accounts, transactions, and system logs.
-6. **Communication Modules**: Facilitate data exchange between sensors, the server, and user interfaces using protocols such as MQTT, HTTP, and WebSocket.
-7. **Security Mechanisms**: Implement encryption, authentication, and authorization protocols to ensure data integrity and user privacy.
+3. **Mobile and Web Application**: Provides users with real-time information on parking space availability, parking management, and user registration.
+5. **Database**: Stores information related to parking spaces, user accounts, records, and system logs.
+6. **Communication Modules**: Facilitate data exchange between sensors, the server, and user interfaces using protocols such as HTTP, WebSocket, or ZeroTier.
 
 *** Integration
 Integration of the system components involves several critical steps to ensure seamless operation:
@@ -684,9 +694,8 @@ The deployment strategy outlines the steps for rolling out the system in a live 
 *** Environment Setup
 The environment setup involves configuring the hardware and software necessary for system operation:
 
-1. **Server Configuration**: Setting up the server with the required operating system, software, and security measures.
 2. **Network Setup**: Configuring network components to ensure reliable and secure communication.
-3. **Database Setup**: Installing and configuring the database management system to store and manage data.
+**Database Setup**: Installing and configuring the database management system to store and manage data.
 
 ** Maintenance
 
