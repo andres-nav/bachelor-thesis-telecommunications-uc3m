@@ -82,13 +82,11 @@ Gracias
 \label{sec:org5c466b2}
 \chapter{General understanding and relevance of parking management systems}
 \label{sec:org2e7d34c}
-In recent years, the exponential increase in the number of vehicles has aggravated urban challenges, notably in parking management. For instance, the surge in car usage in Madrid has significantly contributed to an increase in pollution levels \autocite{environmental_imapct_madrid_central}. Despite a stable number of parking spaces in Spain between 2014 and 2020 \autocite{urban_mobility_trends}, the demand has led to higher costs and greater difficulty in securing parking, thereby increasing time spent searching for spaces, traffic congestion, and urban pollution.
 
 TODO: explain what is a parking management system
 
 Current parking management in Spain predominantly relies on human intervention, where personnel are responsible for regulating access to parking spaces. This manual approach often results in delays, inadequate information dissemination, and inefficient control over parking availability.
 
-Advancements in technology offer promising solutions to these issues. The proliferation of internet-connected devices, which have grown by 20\% year-over-year \autocite{iot_growth}, has facilitated the development of Internet of Things (IoT)-based parking management systems. These systems aim to mitigate traffic congestion and reduce pollution in urban areas.
 
 A parking management system (PMS) is designed to optimize the utilization of parking spaces within a city, community, or building. The primary objectives of a PMS include automating parking space management, recording vehicle transit, and enhancing overall operational efficiency.
 
@@ -104,54 +102,7 @@ These systems share several common features:
 The integration of PMSs into urban infrastructure not only addresses parking-related issues but also aligns with broader smart city initiatives aimed at enhancing urban living conditions.
 \chapter{Motivation}
 \label{sec:org1fd61c1}
-Parking management systems remain a critical area of research and development, even though manual parking management has been utilized for many years. Research published in \autocite{parking_choices} indicates that the type of parking management system significantly influences the parking choices of citizens. Additionally, citizens tend to prefer systems that are user-friendly, secure, and reliable.
 
-Currently, parking management systems in Spain largely rely on human intervention, leading to several issues such as delays in availability, lack of information, and insufficient control of parking spaces. Continuous human presence is required to maintain the functionality of these systems throughout the day, which increases operational costs.
-
-To address these issues, recent technological advancements have emerged. For instance:
-\begin{itemize}
-\item RFID-based smart parking management systems \autocite{rfid_smart_parking_management_system} have been developed to manage the transit of vehicles within parking spaces.
-\item IoT-based smart parking management systems \autocite{development_smart_parking_management_system} have been designed to manage parking spaces within a community.
-\item Intelligent parking systems utilizing image processing \autocite{intelligent_parking_system_image_processing} have been proposed to recognize license plates of parked vehicles.
-\end{itemize}
-
-Despite these advancements, several challenges persist. Current parking management systems are typically centralized, which presents scalability and reliability issues in the event of service interruptions. Additionally, these systems often lack customization options, making it difficult to adapt to user-specific needs.
-
-Given these challenges, the primary objective of this project is to design and implement a fully distributed parking management system that addresses the limitations of current systems, focusing on enhancing scalability, reliability, and user adaptability.
-\chapter{Objectives}
-\label{sec:org9758daa}
-The primary objective of this bachelor thesis is to design and implement a fully distributed parking management system tailored for the next generation of smart cities. This project aims to address the inefficiencies and challenges inherent in current parking management systems through a distributed approach that leverages modern technologies.
-
-Specifically, the objectives of this project are as follows:
-
-\begin{enumerate}
-\item \textbf{Research Current Systems}: Conduct a comprehensive study of existing parking management systems, identifying their main problems. This involves understanding user requirements, analyzing the technologies employed, and evaluating system effectiveness.
-
-\item \textbf{Technology Analysis}: Analyze the technologies currently used in parking management systems to determine their suitability for a distributed architecture. This includes examining sensors, Internet of Things (IoT) devices, communication protocols, and data processing methods.
-
-\item \textbf{System Infrastructure Design}: Design the overall infrastructure of the distributed parking management system. This encompasses defining the system architecture, selecting appropriate technologies, and developing detailed design specifications.
-
-\item \textbf{System Development}: Develop the system by adhering to a structured methodology that includes phases of planning, design, implementation, testing, deployment, and maintenance. Each phase will follow best practices to ensure the system's robustness and efficiency.
-
-\item \textbf{Performance Analysis}: Evaluate the implemented system based on various criteria such as performance, scalability, security, usability, reliability, availability, and cost. This comprehensive analysis will help in assessing the effectiveness of the system and identifying areas for improvement.
-\end{enumerate}
-
-Through these objectives, the thesis aims to contribute to the advancement of smart city technologies by providing a scalable, secure, and user-friendly parking management solution. The distributed nature of the proposed system is expected to enhance its performance and reliability, making it a viable option for modern urban environments.
-\chapter{Outline of the work}
-\label{sec:orgf3808bf}
-This thesis is structured into several comprehensive chapters, each targeting specific objectives and tasks essential to the development of a distributed parking management system for smart cities.
-
-The first chapter provides an in-depth study of existing parking management systems, focusing on their features and identifying key issues. This analysis serves as the foundation for understanding the requirements and challenges faced in current systems.
-
-The second chapter delves into the technologies that can be employed to create a distributed parking management system. It encompasses an initial evaluation of both software and hardware components, along with the necessary infrastructure to support such a system.
-
-The third chapter covers the implementation phase of the project. It follows a systematic methodology that includes planning, design, implementation, testing, deployment, and maintenance.
-
-In the fourth chapter, the results of the implemented system are thoroughly analyzed. This analysis includes assessments of performance, scalability, security, usability, reliability, availability, and costs. Each aspect is evaluated using appropriate metrics and benchmarks to provide a comprehensive understanding of the system's effectiveness.
-
-Finally, the fifth chapter presents the conclusions drawn from the research and development process. It also outlines potential future work, considering advancements that could further enhance the system. Additionally, this chapter discusses the socio-economic impact and regulatory framework relevant to the deployment of a distributed parking management system in smart cities.
-\section{{\bfseries\sffamily TODO} add links to each chapter}
-\label{sec:orgfd76766}
 \part{State of the art}
 \label{sec:org264b54b}
 \chapter{Overview of Parking Management Systems}
@@ -358,64 +309,6 @@ A comparative analysis of the case studies highlights the diverse approaches to 
 In conclusion, the case studies demonstrate that while current parking management systems offer significant benefits, they also face notable challenges. By learning from these implementations and addressing their limitations, the development of a distributed parking management system can achieve greater scalability, reliability, and user adaptability, ultimately contributing to the advancement of smart city initiatives.
 \part{REVW Design}
 \label{sec:orge83c51e}
-\chapter{Requirements}
-\label{sec:org285e7c5}
-The parking management system developed for this project was designed to ensure that it met the needs of drivers, parking facility managers, and city administrators.
-The system was designed to address the limitations of current parking management systems, focusing on enhancing scalability, reliability, and user adaptability.
-
-For this purpose, different user requirements were identified, and system requirements were defined to meet these needs.
-Furthermore, the system was designed to incorporate specific technical and functional specifications to ensure its effectiveness and efficiency.
-\section{User Requirements}
-\label{sec:org5f7294f}
-The user requirements for the distributed parking management system were identified through a comprehensive analysis of the needs and preferences of drivers, parking facility managers, city administrators and users with disabilities.
-These requirements were essential to ensure that the system was user-friendly, efficient, and aligned with the objectives of smart city initiatives \autocite{smart_cities_initiatives}.
-
-The requirements of the primary users were as follows:
-
-For drivers, the system needed to provide real-time information about available parking spaces to minimize search time.
-This was crucial to reduce traffic congestion and pollution in urban areas.
-Moreover, drivers expected an easy-to-use interface for quick navigation and more importantly, automatic functionality of the system without the need for human intervention.
-That way, they did not have to worry about the availability of parking spaces and could focus on other tasks.
-
-Parking facility managers required tools to monitor and manage their facilities efficiently, as well as access to detailed reports and analytics on parking usage patterns to optimize space utilization.
-A notification system for intrusions such as unauthorized parking or security breaches was also essential to ensure the safety of the parking facilities.
-Enhanced security measures, including surveillance and access control, were a must-have for them.
-
-On the other hand, city administrators needed a system that could provide insights into parking demand and usage trends to inform urban planning decisions.
-The system should support the integration of parking data with other smart city initiatives to enhance overall urban mobility and sustainability.
-Moreover, city administrators required tools to monitor and minimize the environmental impact of parking facilities, such as reducing emissions and energy consumption.
-The system should also comply with local regulations and standards for data privacy and security such as GDPR \autocite{gdpr}.
-
-Finally, users with disabilities needed accessibility features such as voice commands, screen readers, and other assistive technologies to ensure that they could use the system effectively.
-These features were essential to promote inclusivity and ensure that all users could benefit from the distributed parking management system.
-Moreover, the system should be designed to accommodate users with different needs and preferences, ensuring a seamless user experience for everyone.
-\section{System Requirements}
-\label{sec:orgeed0ee1}
-For the distributed parking management system to meet the user requirements, it had to incorporate specific system requirements.
-These requirements were defined to ensure that the system was scalable, reliable, secure, and user-friendly, aligning with the objectives of smart city initiatives as well as the needs of drivers, parking facility managers, and city administrators.
-The system requirements were essential to guide the design and development of the distributed parking management system, ensuring that it met the expectations of all stakeholders and delivered the desired outcomes.
-
-The main system requirements were as follows:
-
-For the real-time monitoring of parking space availability, the system needed to incorporate sensors and IoT devices to detect vehicle presence and occupancy.
-These sensors had to be accurate, reliable, and cost-effective to provide up-to-date information on parking availability.
-
-Reservation was another key requirement, allowing drivers to be assigned a specific number of parking spaces in advance to ensure that they could secure a spot when needed.
-The reservation system had to be integrated with the monitoring system to ensure that drivers could find available spaces.
-
-The system also needed to be self-sufficient, with automated gate and barrier control to regulate access to parking facilities.
-It had to be capable of managing multiple parking facilities simultaneously, ensuring that drivers could access the system from different locations.
-And it had to be able to function without human intervention, reducing the need for manual oversight.
-
-Moreover, the system had to be scalable and flexible, with a distributed architecture that could handle large volumes of data and a growing number of users.
-It had to support additional number of communities and parking facilities, ensuring that it could adapt to changing requirements.
-For the system to be effective, modularity was essential, allowing for easy updates and integration of new features as needed.
-
-Security and availability were critical requirements for the system, ensuring that the system was robust and resilient against cyber threats and service interruptions.
-Interoperability was crucial to ensure compatibility with existing and future smart city infrastructure.
-
-Finally, the user interface had to be intuitive and user-friendly, with mobile accessibility for drivers and web-based interfaces for facility managers and city administrators.
-And accessibility features were needed to support users with disabilities, ensuring that the system was inclusive and accessible to all.
 \chapter{{\bfseries\sffamily STRT} Overview and Architecture}
 \label{sec:org499902e}
 The distributed parking management system was designed to address the limitations of current parking management systems, focusing on addressing the user and system requirements identified in the previous section.

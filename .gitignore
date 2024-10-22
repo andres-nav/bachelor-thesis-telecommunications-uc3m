@@ -1,3 +1,5 @@
 *.el
-/*.bbl
-/*.bbl-SAVE-ERROR
+*.bbl
+**/build/
+**/.auctex-auto/
+*.blg

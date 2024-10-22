@@ -1,0 +1,112 @@
+\documentclass[oneside, 12pt, a4paper]{book}
+
+\errorcontextlines=5 % Adjust the number to show more or fewer lines
+
+\makeatletter
+\def\input@path{{./templates/}}
+\usepackage{thesis_uc3m}
+\graphicspath{{./figures} {./templates/figures}}
+\makeatother
+
+\title{Building a Scalable and Decentralized Parking Management Solution for Multi-Community Deployment}
+\author{Andrés Navarro Pedregal}
+\degree{Data Science and Engineering and Telecommunication Technologies Engineering}
+\graduationyear{2024~--~2025}
+\supervisor{David Larrabeiti López}
+\placeandyear{Leganés, 2025}
+
+\hypersetup{
+  pdfauthor=Andres Navarro Pedregal,
+  pdftitle=Final Thesis | Andres Navarro Pedregal | Telecommunication Technologies Engineering,
+  pdfsubject=Final Thesis,
+  pdfkeywords={Final Thesis, Andres Navarro Pedregal, Telecommunication Technologies Engineering},
+}
+
+\addbibresource{./bibliography.bib} % load the bibliography file
+
+\loadglsentries{acronyms} % load the acronyms file
+
+\begin{document}
+
+% \setcounter{tocdepth}{0} % Show only parts and chapters in the table of contents
+
+\frontmatter
+\maketitle
+
+\blankpage%
+\chapter*{Abstract}
+
+this is an abstract
+
+\textbf{Keywords:} keyword1, keyword2, keyword3
+
+\blankpage%
+
+\chapter*{Acknowledgments}
+\begingroup
+\let\clearpage\relax % This temporarily disables \clearpage so the Agradecimientos chapter is on the same page
+
+Thanks
+
+\chapter*{Agradecimientos}
+
+Gracias
+
+\endgroup
+
+\blankpage%
+
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+\blankpage%
+
+\listoffigures
+
+\blankpage%
+
+\listoftables
+
+\blankpage%
+
+\printglossary[type=\acronymtype,style=long, title=LIST OF ACROYNMS]
+
+\blankpage%
+
+\mainmatter%
+
+\oldpart{Introduction}% So there is no new page before the first chapter, thus the page number is correct
+
+\input{src/motivation}
+\input{src/statement_of_problem}
+\input{src/objectives}
+\input{src/document_structure}
+\input{src/methodology_approach}
+
+\part{Theoretical Background}
+
+\input{src/deep_learning}
+
+\part{State of the art}
+
+\input{src/regulatory_framework}
+
+\part{Methodology}
+
+\input{src/requirements}
+\input{src/design}
+\input{src/implementation}
+\input{src/testing}
+
+\part{Results}
+
+\part{Conclusions}
+
+\input{src/conclusions}
+\input{src/future_work}
+\input{src/socio_economic_environment}
+
+\blankpage%
+\printbibliography%
+
+\end{document}
