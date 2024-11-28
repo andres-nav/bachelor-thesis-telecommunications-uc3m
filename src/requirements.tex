@@ -1,62 +1,88 @@
 \chapter{Requirements}\label{ch:requirements}
 
-\todo{Write this chapter}
+The \gls{pms} for this project is designed to address the evolving needs of various users, including parking facility managers and drivers. The system's primary objective, detailed in \cref{ch:objectives}, is to overcome the limitations of traditional parking management systems by improving scalability, reliability, and user adaptability, while aligning with the goals of smart city initiatives.
 
-The parking management system developed for this project was designed to ensure that it met the needs of drivers, parking facility managers, and city administrators.
-The system was designed to address the limitations of current parking management systems, focusing on enhancing scalability, reliability, and user adaptability.
-
-For this purpose, different user requirements were identified, and system requirements were defined to meet these needs.
-Furthermore, the system was designed to incorporate specific technical and functional specifications to ensure its effectiveness and efficiency.
+To achieve this, user and system requirements are identified. These requirements are essential for ensuring the system’s effectiveness, efficiency, and alignment with the diverse needs of its users. The system's technical and functional specifications are also established to ensure its successful implementation.
 
 \section{User Requirements}\label{sec:user_requirements}
 
-The user requirements for the distributed parking management system were identified through a comprehensive analysis of the needs and preferences of drivers, parking facility managers, city administrators and users with disabilities.
-These requirements were essential to ensure that the system was user-friendly, efficient, and aligned with the objectives of smart city initiatives \autocite{smart_cities_initiatives}.
+The user requirements for the distributed \gls{pms} are determined through a thorough analysis of the needs and expectations of parking facility managers and drivers. These requirements are critical for designing a system that effectively addresses operational challenges, improves the efficiency of parking space utilization, and integrates seamlessly into existing urban mobility frameworks.
 
-The requirements of the primary users were as follows:
+The primary users of the system, parking facility managers and drivers, have specific needs that the system is designed to meet. Their main objectives include improving parking management efficiency, ensuring the safety of the parking environment, and optimizing space utilization across multiple facilities. The system needs to enable them to monitor parking space availability in real-time, manage entry and exit of vehicles, and provide essential data for decision-making and reporting.
 
-For drivers, the system needed to provide real-time information about available parking spaces to minimize search time.
-This was crucial to reduce traffic congestion and pollution in urban areas.
-Moreover, drivers expected an easy-to-use interface for quick navigation and more importantly, automatic functionality of the system without the need for human intervention.
-That way, they did not have to worry about the availability of parking spaces and could focus on other tasks.
+The requirements for the users can be broken down into the following key areas:
 
-Parking facility managers required tools to monitor and manage their facilities efficiently, as well as access to detailed reports and analytics on parking usage patterns to optimize space utilization.
-A notification system for intrusions such as unauthorized parking or security breaches was also essential to ensure the safety of the parking facilities.
-Enhanced security measures, including surveillance and access control, were a must-have for them.
+\subsection{Real-Time Monitoring and Management}
 
-On the other hand, city administrators needed a system that could provide insights into parking demand and usage trends to inform urban planning decisions.
-The system should support the integration of parking data with other smart city initiatives to enhance overall urban mobility and sustainability.
-Moreover, city administrators required tools to monitor and minimize the environmental impact of parking facilities, such as reducing emissions and energy consumption.
-The system should also comply with local regulations and standards for data privacy and security such as GDPR \autocite{gdpr}.
+Parking facility managers need a system that provides real-time monitoring of parking spaces. This feature is essential for ensuring that parking spaces are used efficiently and that any underutilized spaces are identified and optimized. Real-time data to track the occupancy status of each parking spot, which is crucial for streamlining operations, reducing congestion, and improving the overall customer experience.
 
-Finally, users with disabilities needed accessibility features such as voice commands, screen readers, and other assistive technologies to ensure that they could use the system effectively.
-These features were essential to promote inclusivity and ensure that all users could benefit from the distributed parking management system.
-Moreover, the system should be designed to accommodate users with different needs and preferences, ensuring a seamless user experience for everyone.
+The system also allows parking facility managers to retrieve occupancy patterns and identify peak demand times, which helps adjust pricing strategies, optimize space allocation, and ensure parking spaces are available when needed.
+
+\subsection{Automation of Parking Access}
+
+Automation is another key requirement for the parking management system. Parking facility managers need a system that controls vehicle access to parking areas without requiring human intervention. Automated gates and barriers are essential for improving efficiency, reducing delays, and ensuring that vehicles can enter and exit parking facilities smoothly. These automated systems are integrated with real-time monitoring data to ensure that only authorized vehicles can access specific parking areas.
+
+The system also provides tools for managing access rights based on specific criteria, such as license plate, membership status, or occupancy. Parking facility managers need to configure access control rules and monitor the effectiveness of these rules in real-time.
+
+\subsection{Security and Incident Management}
+
+Ensuring the security of parking facilities is a critical concern for parking facility managers. The system needs to incorporate security features to prevent unauthorized access to parking areas, detect potential security breaches, and provide timely alerts for incidents such as unauthorized parking or other violations. While surveillance systems are removed from the technical specifications, the cameras used for real-time monitoring still play a role in incident detection, as they capture images or video that can be reviewed in the event of an issue.
+
+Real-time alerts are required for events such as access attempts by unauthorized vehicles, security breaches, or potential hazards. These alerts are sent to parking facility managers through the system's notification mechanisms, allowing them to respond quickly and effectively to incidents.
+
+\subsection{Data Analytics and Reporting}
+
+Parking facility managers need access to detailed reports and analytics on parking usage, including occupancy rates, peak demand times, revenue generation, and space utilization patterns. The system provides the ability to download the user data to peform reports, assisting in operational planning, resource allocation, and decision-making.
 
 \section{System Requirements}\label{sec:system_requirements}
 
-For the distributed parking management system to meet the user requirements, it had to incorporate specific system requirements.
-These requirements were defined to ensure that the system was scalable, reliable, secure, and user-friendly, aligning with the objectives of smart city initiatives as well as the needs of drivers, parking facility managers, and city administrators.
-The system requirements were essential to guide the design and development of the distributed parking management system, ensuring that it met the expectations of all stakeholders and delivered the desired outcomes.
+To meet the diverse user requirements, the distributed \gls{pms} is designed with several key system requirements in mind. These requirements focus on ensuring that the system is scalable, reliable, secure, and user-friendly, while also supporting the goals of smart city initiatives.
 
-The main system requirements were as follows:
+The main system requirements are as follows:
 
-For the real-time monitoring of parking space availability, the system needed to incorporate sensors and IoT devices to detect vehicle presence and occupancy.
-These sensors had to be accurate, reliable, and cost-effective to provide up-to-date information on parking availability.
+\subsection{Real-Time Monitoring}
 
-Reservation was another key requirement, allowing drivers to be assigned a specific number of parking spaces in advance to ensure that they could secure a spot when needed.
-The reservation system had to be integrated with the monitoring system to ensure that drivers could find available spaces.
+The system needs to incorporate cameras for monitoring parking space occupancy in real-time. These cameras must be accurate, reliable, and capable of detecting vehicle presence or absence in parking spaces. The system must be able to process data from numerous cameras across multiple locations simultaneously, ensuring that the information provided to parking facility managers is accurate and timely.
 
-The system also needed to be self-sufficient, with automated gate and barrier control to regulate access to parking facilities.
-It had to be capable of managing multiple parking facilities simultaneously, ensuring that drivers could access the system from different locations.
-And it had to be able to function without human intervention, reducing the need for manual oversight.
+Furthermore, the camera-based monitoring system must be robust enough to handle environmental factors such as weather conditions and lighting variations.
 
-Moreover, the system had to be scalable and flexible, with a distributed architecture that could handle large volumes of data and a growing number of users.
-It had to support additional number of communities and parking facilities, ensuring that it could adapt to changing requirements.
-For the system to be effective, modularity was essential, allowing for easy updates and integration of new features as needed.
+\subsection{Automation and Access Control}
 
-Security and availability were critical requirements for the system, ensuring that the system was robust and resilient against cyber threats and service interruptions.
-Interoperability was crucial to ensure compatibility with existing and future smart city infrastructure.
+Automated gate and barrier systems are a critical component of the system. These systems must be fully integrated with the parking management platform, allowing for real-time updates on space availability and enabling seamless access control. Vehicles must be able to enter and exit parking facilities autonomously based on the available space data, without the need for human intervention.
 
-Finally, the user interface had to be intuitive and user-friendly, with mobile accessibility for drivers and web-based interfaces for facility managers and city administrators.
-And accessibility features were needed to support users with disabilities, ensuring that the system was inclusive and accessible to all.
+Access control mechanisms also need to ensure that only authorized vehicles can enter restricted areas. This can include integration with \gls{lpr} systems, RFID-based solutions, or mobile applications that validate the identity of the vehicle and its access privileges.
+
+\subsection{Scalability and Flexibility}
+
+The system architecture needs to be scalable and flexible to accommodate a growing number of parking facilities, users, and devices. As demand for parking management grows, the system must be able to scale horizontally, adding additional cameras, sensors, or access control systems without impacting performance. Moreover, the system must be modular, allowing for easy updates or integration of new features.
+
+\subsection{Security and Availability}
+
+Given the importance of the system in managing urban mobility and infrastructure, security and availability are paramount. The system must be resilient to cyberattacks and other threats, with multiple layers of security in place to protect sensitive data and ensure continuous availability of services. Redundancy mechanisms, such as backup servers and data replication, are required to ensure high availability and minimize service interruptions. The system must be capable of maintaining operations even in the event of network outages or hardware failures. Interoperability is also a key consideration. The system must be designed to work seamlessly with existing infrastructure and technologies, both within the parking facilities and within the broader smart city ecosystem.
+
+\subsection{Physical System Requirements}
+
+In terms of hardware, the parking management system requires a robust and reliable physical infrastructure to support the real-time monitoring and automation functions. This infrastructure includes:
+
+\begin{itemize}
+	\item \textbf{Cameras:} High-resolution cameras capable of detecting vehicle occupancy in parking spaces. These cameras must be weather-resistant, durable, and equipped with night vision or infrared capabilities to ensure reliable performance in various environmental conditions, such as low light or harsh weather.
+	\item \textbf{Gate and Barrier Systems:} Automated gates and barriers for controlling vehicle access to parking areas. These systems must be seamlessly integrated with the overall parking management system to allow for real-time updates on space availability and facilitate the automated entry and exit of vehicles.
+	\item \textbf{Network Infrastructure:} A robust communication system to transmit data from cameras, sensors, and access control devices to central servers. The network infrastructure must support high-speed data transfer and be resilient to failures.
+\end{itemize}
+
+The physical infrastructure must be designed for scalability and ease of maintenance, allowing for the expansion or upgrade of components as needed.
+
+\subsection{Data Privacy and Storage}
+
+Data privacy and security are paramount concerns in the design of the parking management system. The system must comply with relevant data protection laws, such as the \gls{gdpr} \autocite{gdpr}, to safeguard personal information and prevent unauthorized access to sensitive data.
+
+The data collected by the system, including parking history, vehicle entry and exit times, and payment details, must be encrypted both during transmission and while stored in the system’s databases. Key data privacy and storage requirements include:
+
+\begin{itemize}
+	\item \textbf{Secure Storage:} All personal and parking-related data should be stored in secure, encrypted databases with access restricted to authorized personnel only.
+	\item \textbf{Data Retention:} The system must adhere to strict data retention policies, ensuring that data is stored only for the minimum time necessary to fulfill the purpose of the service, in accordance with relevant privacy regulations.
+	\item \textbf{User Consent:} The system must obtain explicit consent from users for data collection, explaining the types of data collected and how it will be used, stored, and shared.
+	\item \textbf{Access Control:} The system must include role-based access control mechanisms to ensure that only authorized personnel can access sensitive data, and it must provide audit logs to track data access and modifications.
+\end{itemize}
+
+In addition to ensuring compliance with privacy regulations, the system must include robust mechanisms for data breach detection and response, ensuring that any unauthorized access or data compromise is identified and addressed promptly.

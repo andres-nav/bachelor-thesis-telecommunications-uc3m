@@ -24,7 +24,7 @@ For the computer, the main requirements where that it would need to have the nec
 
 For this project, the NVIDIA Jetson Nano of 4 GBs was used as it offered the best price performance ratio and was sufficient enough to perform the computing requirements.
 
-\subsection{Networking}
+\subsection{Internet Connectivity}
 
 In order to provide conectivity from the on-board computer to the server, a networking connection is needed to be established. As this deployment must be self sufficient and not depend on the infrastructure of each community, a router with 4G connection is deployed. For this case, a conventional router is used, the \todo{add router}. Moreover, in order to provide the connectivity for the different cameras and the computer, a switch was used. The switch was the \todo{add switch}.
 
@@ -38,16 +38,19 @@ The Rele Extension board used was the \todo{add extension} due to the low price-
 
 \section{Server}
 
-The server is the point of contact to connect the users and the different communities. It allows the users to authenticate and connect to the sepcific community. It is based on a scalable archtutecture deployed in \gls{aws} due to the fast time-to-market capabilities and the scalability of it.
+The server is the point of contact to connect the users and the different communities. It allows the users to authenticate and connect to the sepcific community. It is based on a scalable archtutecture deployed in \gls{aws} due to the fast time-to-market capabilities and the scalability of it. The architecture used for this implementation is based on an Autoscaling Group deployed in a private VPC. An autoscaling group is used mainly to adapt to the load of the incoming users dinamically and be able to recover from errors. In order to allow connections from the different users, an Application Load Balancer is used. This distributes the load into the different instances deployed.
 
-The server also hosts the website that the users use to connect to
-\todo{write}
+Inside each instance, a web server is isntalled with the content of the website is shown to the users. The framweork used is the NextJS \todo{add ref} as it is a React framwork used to build full-stack web applications. This allows to embed the website in mobile applications for iOS and Android in an easy and low mantainance manner. Check the \todo{add ref for the implementation} to see more information.
+
+\section{Networking}
+
+In order to connect the terminals with the server, a ZeroTier \todo{add ref} is used. This enableds to connect all the different terminals and server in a straighforwards and easy way on a single network. Moreover, it allows to connect remotely to the terminals to do mainenance or updates in the system.
 
 \section{Monitoring}
 
-\todo{write}
+In order to montior the different terminals and check that they are functioning correctly, an AWS Managed Prometheus is used to gather the data of the different users and a AWS Managed Grafana is used to visualize and make alerts.
 
 \section{Deployment}
 
-\todo{write}
+Finally, for the deployment, in order to automate the deployment in the multiple terminals two tools are used. Github Actions is in charge of building the packages for the different servers and software used which are later defines, and also Ansible is used to automate the instalation of the new software in the different devices.
 
