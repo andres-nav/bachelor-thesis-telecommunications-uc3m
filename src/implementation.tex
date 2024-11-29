@@ -1,3 +1,99 @@
 \chapter{Implementation}\label{ch:implementation}
 
-\todo{Write this chapter}
+Give the reqruiements and the design in the previous chatpers, refer to \cref{ch:requirements} and \cref{ch:design}, the different modules are implemented following the V-model established in \cref{ch:methodology_approach}.
+
+
+\section{Community deployment}
+
+In order to deploy a new system in a new community the following elements must be installed
+
+\todo{add architecture}
+
+A terminal in charge of the processing of all the incoming data from the different elements and has the algorithm to open the gates when a allowed user enters or exists. The cameras already explained in the \cref{ch:design}, and the networking system that provides connection to the central server and allows users and manager to connect to the specific commuity and administer it.
+
+\subsection{Terminals}
+
+As previously stated, the terminals are the ones in charge of the main functionality of the parking management system, storing the data, detecting the vehicles, and allowing the parking management maangers administer the community. For this the following subsystems are design, a database to store the data locally, a server to expose the service externally, and a detection algorithm to detect the vehicles. Moreover, other subsystems are also implemented, such as a backup system, and monitoring system.
+
+\todo{add architecture of the terminals}
+
+\subsubsection{database}
+
+In order to store the data of each community, a database is used. The options are between SQL or NoSQL database and a local database in the terminal or a centralized database in the cloud. For this case, a local SQL database based on SQLite \todo{add ref} is used. The main reason behind it was due to the requirements of having the data inside the community for data privacy and security reasons.
+
+Moreover, while it is true that using a centralized database would be easier for maintenance, backups, and upgradability, the requirement of high availability would requier to store a cache database portion in each terminal in order to make the database robust to internet connection losses. Using a local database we ensure that the systems keeps working even if internet connection losses occur. The drawback using a local database is that we have to ensure to backup the database periodically to meet \gls{rto} and \gls{rpo} so no critical data is lost.
+
+The schema used for the dataset is the following.
+
+\todo{add schema image and explain}
+
+\subsubsection{Terminal Server}
+
+To provide the capabilities for the server to communicate to the terminal, a local server is developed. This server will have all the require actions that a user can perfom to administer and use the system. The server used is a ExpressJS \todo{add ref} server and based on a RestAPI methdology. The reason to use this is that ExpressJS is a widely used framework with a wide adoptions and multiple libraries to perform different tasks such as database management and more.
+
+The RestAPI methodoloy \todo{explain}
+
+The following different edpoints are used:
+\todo{add endpoints}
+
+Note that in order to authenticate the users, a custom JWT token is used that will be later explained in \todo{add section explained}.
+
+\subsubsection{Detection Algorithm}
+
+In order to detect the different licence plates of the vehicles, a custom deep learning algorithm is used based on YOLO \todo{add ref}. The implementation of this model is out of the scope of this project but more information can be found in the following paper https://www.sciencedirect.com/science/article/pii/S0921889023002476?via%3Dihub
+
+In summary the system has two main steps, one step is to detect a licence plate in the image, it creates a bounding box of the licence plate that is later processed by a second algorithm to detect the characters of the licence plate.
+
+\todo{add images}
+
+\subsubsection{Other subsystems}
+
+The cameras are used to send the image captured in the different points of the community, usually places in the gate doors to the terminal. The terminal processes the data with the detection algorithm. The data is sent through an RTSP \todo{add ref and gls} protocol and connected via Ethernet to the network.
+
+In order to connect the cameras with the terminal and the terminal to the internet, the router with a switch is used. The specific router is a 4G router to povide connectivity to the terminal.
+
+Finally, to ensure the correct functionality of them, a backup system that backups up the database every day to Amazon S3 \todo{ref} encrypted, and also a monitoring system that sends metrics of the terminal to a centralized server in oder to keep track of the different terminals and detect if a specific terminal is malfunctioning.
+
+\section{Cloud deployment}
+
+To enable the access to the different communities, a web server is deployed in AWS. The main component is a NextJS server that holds the website that the users use to access the system and also the backend functionality to connect to each specific community.
+
+\subsection{Cloud Architecture}
+
+In order to deploy a scalable and robust application the following arhictecture is used.
+
+\tood{add cloud architecture and explain}
+
+Note that this deployment is based on EC2 instances as the use of ZeroTier requried to have virtualmachines installed as it cannot be install in containers. The main probelm is that the Zerotier docker installation needs special network admin permissions https://github.com/zyclonite/zerotier-docker, which ECS \todo{add ref} does not allow. Also a budget architecture was needed to keep the cost low.
+
+Moreover, all hte deployment was built and administer using Terraform \todo{add ref}. The reason was to have a description of the deployment used and be able to make changes.
+
+\subsection{Website}
+
+The website was design to be responsive to be able to be used in mobile devices and computer devices. The website is built using the React framework \todo{ref} to provide the functionality and responsive of a modern website. The website also uses TailwindCSS \todo{ref} for a ascethic and mother look. Check out \todo{add image}.
+
+Moreover, the website is embeded in Progressive Web Apps in Android and iOS to allow users to download an application through the mobile store of choice and be able to use the website in their phones. \todo{add image of mobiles}.
+
+\subsection{User Authentication}
+
+In order to authenitcate the users and be able for the users to sign in, the requirement was that a phone SMS based system was used to make it easier and more secure for the users to sign in. for this a Firebase Auth \todo{add ref} was used. This allows the application to send sms to phone numbers of the users to authenticate. Also it sends a JWT token to the server that is later used by the terminal to authenicate the users and check the permissions.
+
+\section{Deployment}
+
+In order to perform updates to the system that is upgradeing and making software changed for the different terminals, an automatic deployment is design. This system is based on Github Actions, to build the NPM packages to be installed on the temrinals. This is done buy building github action workflows that build the package with the necesarry dependencies and are stored in GitHub packages for later used. It is worth to note that the creation of the package is done automaticically when a new version is created using tags in the Git system.
+
+Once the package is build, Ansible is used, \todo{explain ansible}. This is done by creating a playbook and setting the required actions. Moreover a inventory is used, this holds all the terminals that Ansible will  connect and update.
+
+\todo{show the tasks done}
+
+It is worth noting that the migration of the database are done manually for the moment, as no straightforward way and a way that ensures the database integrity was design yet, but this is an area of current development.
+
+\todo{extend}
+
+\section{Monitoring}
+
+In order to monitor the different terminals in case of errors, The prometheus deployment is used to store the metrics. Custom scripts are done to send information to the system. Once the information is stored in prometheus, a aws managed grafana is used to view and send allerts
+
+\todo{extend}
+
+
