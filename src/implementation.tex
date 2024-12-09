@@ -46,6 +46,10 @@ In summary the system has two main steps, one step is to detect a licence plate 
 
 \todo{add images}
 
+\subsection{Door Opening}
+
+To control the door, a rele is used as previously explained. In order to allow the system to be able to open the door and also the detection algorithm, a small server is step up to listen for requests to open the door. When a request is sent to the server to open the door, a signal is sent throught the rele and the door opens successfuly.
+
 \subsubsection{Other subsystems}
 
 The cameras are used to send the image captured in the different points of the community, usually places in the gate doors to the terminal. The terminal processes the data with the detection algorithm. The data is sent through an RTSP \todo{add ref and gls} protocol and connected via Ethernet to the network.
@@ -88,12 +92,12 @@ Once the package is build, Ansible is used, \todo{explain ansible}. This is done
 
 It is worth noting that the migration of the database are done manually for the moment, as no straightforward way and a way that ensures the database integrity was design yet, but this is an area of current development.
 
-\todo{extend}
+\todo{extend, need to do it first}
 
 \section{Monitoring}
 
 In order to monitor the different terminals in case of errors, The prometheus deployment is used to store the metrics. Custom scripts are done to send information to the system. Once the information is stored in prometheus, a aws managed grafana is used to view and send allerts
 
-\todo{extend}
+\todo{extend, need to do it first}
 
 
