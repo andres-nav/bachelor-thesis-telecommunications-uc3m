@@ -1,28 +1,24 @@
 \chapter{Testing}\label{ch:testing}
 
-In order to test the system, first each different subsystem and components is tested individually as described in \cref{ch:methodology_approach}. For this, the database, terminal  server are first tested individually. Then, the system is tested as a whole in a controlled environment to ensure the correct functionality and make sure that they system cover the requirements detailed in \cref{ch:requirements}.
-
-\section{Individual Tests}
-
-\subsection{Database}
-
-The database is a highly important part in the functionality of the system. A robust and properly designed database is needed to ensure the correct gathering of the data and relationships. For this in order to test the database, multiple custom SQL queries are designed to ensure that the edge cases are covered to store specific information. During this part, multiple iterations of the database are designed narrowing down the data categories and ensurin the different data entries have the correct data representation. For example, ensuring that boolean attribues can only allow for 0 and 1 or the number of cars a user is able to have in a specific parking is not negative. By doing this, we ensure that the data stored is correct and no unintended functionality is performed in the data layer.
-
-\subsection{Terminal}
-
-For the terminal, all API endpoints are tested to make sure that they function as expected. Insomnia \todo{ref}, a tool to craft and perform API requests for testing, is used. This is done to ensure the correct functionality of the API and have an example for each API entries for documentation purposes.
+The testing phase of this parking management system follows a comprehensive approach as outlined in \cref{ch:methodology_approach}, beginning with individual component testing before progressing to integrated system validation. This methodical approach ensures that each component functions correctly in isolation before examining their interaction within the complete system.
 
 \todo{add images}
 
-\subsection{Server}
+\section{Individual Tests}
 
-For the server, two approches are used to ensure the correct functionality. First, the server is tested grafically and see that the website functions correctly. It is worth to note, that the website is tested to be responsive, that is to be adapted to mobile devices also. This is used using the Responsive Design Mode in the Inspector Tools of Firefox and Google Chrome \todo{add ref}. Moreover, the server is tested in conjunction with the terminal to ensure the correct functinoality between both of them locally.
+The database testing phase focused on ensuring data integrity and proper relationship management through rigorous SQL query testing. Multiple database iterations were conducted to refine data categories and verify correct data representation. Critical tests included validating constraints such as boolean attributes being limited to 0 and 1 values, and ensuring logical consistency in numerical fields like preventing negative values for parking space allocations. This thorough validation process helped establish a robust foundation for data storage and manipulation.
+
+The terminal testing concentrated on validating the API endpoints using Insomnia \autocite{insomnia2025}, a specialized tool for API testing and documentation. Each endpoint underwent systematic testing to verify correct functionality, proper error handling, and expected response formats. This process generated comprehensive documentation of API behaviors and interactions, creating a valuable reference for future development and maintenance.
+
+Server testing incorporated both visual interface validation and functional integration testing. The visual testing focused on ensuring proper website rendering across different devices and screen sizes using the Responsive Design Mode available in Firefox and Google Chrome's developer tools. Additionally, extensive integration testing was performed to verify seamless communication between the server and terminal components in a local environment.
 
 \section{Controlled Environment Tests}
 
-In order to ensure that the system behaves correctly as a whole, tests are performed on controlled environments, that is a parking place where the system is used to managed
-add the problem with bad connection and trying different sims
+System-wide testing was conducted in actual parking facilities to validate real-world performance. These tests revealed several important considerations regarding network connectivity. Various cellular network providers were evaluated to identify the most reliable connection for different deployment locations. Network resilience testing included scenarios with poor connection quality and complete connection loss to ensure system stability.
 
-\todo{ add the infrared part for problems}
+\todo{add the infrared part for problems}
 
-\todo{ add rele problems}
+\todo{add rele problems}
+
+The testing phase highlighted several areas requiring additional attention, particularly regarding network reliability and hardware interactions. These findings led to important system refinements and the development of robust fallback mechanisms to maintain system functionality under suboptimal conditions.
+

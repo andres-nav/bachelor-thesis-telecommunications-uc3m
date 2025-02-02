@@ -244,9 +244,19 @@ The deployment pipeline is designed to handle the complexities of distributing s
 
 \subsection{Terminal Deployment}
 
-For community terminals, the deployment process requires special consideration due to their distributed nature and the critical importance of maintaining data integrity. The terminal software updates are managed through automated processes, but database migrations present unique challenges. Currently, database migrations are handled manually to ensure data integrity and prevent potential issues that could arise from automated migration processes. This conservative approach reflects the critical nature of the parking management data and the need to maintain system reliability.
+The deployment of community terminals requires special consideration due to their distributed nature and the critical importance of maintaining data integrity. Terminal software updates are managed through automated processes, but database migrations present unique challenges. Currently, database migrations are handled manually to ensure data integrity and prevent potential issues that could arise from automated migration processes. This conservative approach reflects the critical nature of the parking management data and the need to maintain system reliability.
 
-While this manual database migration process is functional, it represents an area identified for future improvement. The development team is actively working on designing a robust automated migration system that can maintain data integrity while reducing the operational overhead of manual interventions. This enhancement will need to carefully balance automation with data safety, ensuring that no critical information is lost or corrupted during updates.
+While this manual database migration process is functional, it represents an area identified for future improvement. Work is ongoing to design a robust automated migration system that can maintain data integrity while reducing the operational overhead of manual interventions. This enhancement will need to carefully balance automation with data safety, ensuring that no critical information is lost or corrupted during updates.
+
+To ensure the continuous operation of services on the terminals, systemd services have been implemented. These services are configured to start automatically when the system boots, ensuring that all necessary components of the parking management system are up and running without manual intervention. This approach enhances the reliability and uptime of the terminal systems.
+
+A backup system has been integrated to safeguard critical data. This system automatically uploads the terminal's database to Amazon S3, a secure cloud storage service. Regular backups ensure that data can be recovered in case of hardware failure or other unforeseen issues, minimizing the risk of data loss.
+
+The integration with ZeroTier plays a crucial role in networking the terminals. ZeroTier creates a secure, virtual network that connects all terminals to the central server, regardless of their physical location. This setup allows for easy management and communication between the terminals and the central system, while maintaining a high level of security.
+
+To facilitate these processes, custom scripts have been developed. These scripts automate various tasks such as initiating backups, managing ZeroTier connections, and handling routine maintenance tasks. The use of custom scripts allows for a high degree of flexibility and customization, ensuring that the specific needs of the parking management system are met efficiently.
+
+These enhancements to the terminal deployment process contribute to a more robust, secure, and manageable system. They address key aspects of system reliability, data protection, and network connectivity, which are essential for the effective operation of a distributed parking management solution.
 
 \subsection{Server Deployment}
 
