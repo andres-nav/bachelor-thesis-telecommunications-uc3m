@@ -46,7 +46,7 @@ The hardware section of this project focuses on the essential components require
 
 A comprehensive study was conducted to identify the most budget-friendly hardware options that still meet the necessary requirements for performance and reliability. This analysis took into account factors such as cost, durability, and compatibility with the overall system architecture. The goal was to strike a balance between affordability and capability, ensuring that the chosen hardware would effectively support the project's objectives while remaining economically viable for deployment across multiple communities.
 
-\subsection{Terminals}
+\subsection{Terminals}\label{subsec:design_terminal}
 
 The terminals are the core part of the deployment and is where all the processing is done to manage each community. In order to provide the necessary capabilities for the community such as opening the garage doors and detecting the cars. For that, the requirements of the terminals are that it must support Linux operating system to be able to run the programs, and als it must be able to have the necessary computing capacity to run the \gls{ML} programs to detect the licence plates. In order to select the correct computer, different alternatives are studied, shown in \cref{tab:sbc-comparison}.
 
@@ -173,7 +173,7 @@ The server is the point of contact to connect users with the different communiti
 
 AWS provides a cloud-based solution that allows the system to efficiently manage varying loads and adapt to user demand, which is essential for a parking management system that may experience fluctuating traffic patterns. This flexibility ensures that the system can scale up or down seamlessly, accommodating an increasing number of users and devices without compromising performance.
 
-Moreover, AWS offers robust testing environments that allow developers to validate system functionalities before full deployment. This capability is crucial for ensuring reliability and performance under real-world conditions, as it enables iterative testing and refinement of the system components. By leveraging AWS's extensive infrastructure, the project can ensure high availability and resilience, minimizing downtime and enhancing user experience. 
+Moreover, AWS offers robust testing environments that allow developers to validate system functionalities before full deployment. This capability is crucial for ensuring reliability and performance under real-world conditions, as it enables iterative testing and refinement of the system components. By leveraging AWS's extensive infrastructure, the project can ensure high availability and resilience, minimizing downtime and enhancing user experience.
 
 In summary, the choice of AWS not only supports the immediate needs of scalability and rapid deployment but also provides a solid foundation for ongoing testing and development, essential for maintaining an effective and responsive parking management solution.
 
