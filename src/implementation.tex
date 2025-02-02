@@ -140,7 +140,7 @@ The system incorporates several additional components that work together to ensu
 
 Network connectivity is managed through a dedicated 4G router equipped with an integrated switch. This router, specifically the TP-Link AC1200 model, serves two critical functions: it facilitates communication between the cameras and the terminal, and provides internet connectivity for the entire system. The choice of a 4G router ensures that the system remains independent of the community's existing infrastructure while maintaining reliable connectivity. The integrated switch allows for efficient connection of multiple cameras and the terminal, simplifying the network topology and reducing potential points of failure.
 
-To ensure data integrity and business continuity, the system implements a comprehensive backup strategy. The database, which contains critical operational data including user information and access logs, is automatically backed up daily to Amazon S3 \autocite{AmazonS3}. These backups are encrypted both during transmission and storage, protecting sensitive information from unauthorized access. This automated backup system ensures a \gls{RPO} of 24 hours, minimizing potential data loss in the event of system failure or data corruption. The combination of local encrypted storage and cloud-based backups provides a robust solution for data protection and recovery.
+To ensure data integrity and business continuity, the system implements a comprehensive backup strategy. The database, which contains critical operational data including user information and access logs, is automatically backed up daily to Amazon S3 \autocite{AmazonS3}. These backups are encrypted both during transmission and storage, protecting sensitive information from unauthorized access. This automated backup system ensures a \gls{rpo} of 24 hours, minimizing potential data loss in the event of system failure or data corruption. The combination of local encrypted storage and cloud-based backups provides a robust solution for data protection and recovery.
 
 \section{Cloud deployment}
 
@@ -231,26 +231,39 @@ The entire authentication process is integrated seamlessly into both the web int
 	\caption{Firebase Authentication Users example}\label{fig:firebase}
 \end{figure}
 
-Do
-
 \section{Deployment}
 
-In order to perform updates to the system that is upgradeing and making software changed for the different terminals, an automatic deployment is design. This system is based on Github Actions, to build the NPM packages to be installed on the temrinals. This is done buy building github action workflows that build the package with the necesarry dependencies and are stored in GitHub packages for later used. It is worth to note that the creation of the package is done automaticically when a new version is created using tags in the Git system.
+The deployment process for this distributed parking management system encompasses multiple components, including terminal servers in communities and cloud-based web servers. A standardized approach leveraging modern continuous integration and deployment practices ensures consistent and reliable software updates across all system components. The foundation of this deployment strategy relies on JavaScript frameworks, with applications built and managed through the NPM package manager. To automate the build and release process, a sophisticated GitHub Action pipeline triggers whenever a new release is created in the Git repository. An example can be seen in \cref{fig:github_actions} where web server can be built for the \texttt{0.3.2} version.
 
-Once the package is build, Ansible is used, \todo{explain ansible}. This is done by creating a playbook and setting the required actions. Moreover a inventory is used, this holds all the terminals that Ansible will  connect and update.
+\begin{figure}
+	\includegraphics[width=0.7\textwidth]{github_actions.png}
+	\caption{Example of the GitHub Actions Pipeline}\label{fig:github_actions}
+\end{figure}
 
-\todo{show the tasks done}
-
-It is worth noting that the migration of the database are done manually for the moment, as no straightforward way and a way that ensures the database integrity was design yet, but this is an area of current development.
-
-
-\todo{extend, need to do it first}
-
-other considerations
-terms and services for legal reasons
+The deployment pipeline is designed to handle the complexities of distributing software across various environments while maintaining system integrity and security. When a new version is tagged in the Git repository, the GitHub Actions workflow automatically initiates the build process, creating NPM packages with all necessary dependencies. These packages are then stored in GitHub Packages, providing a centralized and secure location for distribution to both community terminals and cloud servers.
 
 \subsection{Terminal Deployment}
 
+For community terminals, the deployment process requires special consideration due to their distributed nature and the critical importance of maintaining data integrity. The terminal software updates are managed through automated processes, but database migrations present unique challenges. Currently, database migrations are handled manually to ensure data integrity and prevent potential issues that could arise from automated migration processes. This conservative approach reflects the critical nature of the parking management data and the need to maintain system reliability.
+
+While this manual database migration process is functional, it represents an area identified for future improvement. The development team is actively working on designing a robust automated migration system that can maintain data integrity while reducing the operational overhead of manual interventions. This enhancement will need to carefully balance automation with data safety, ensuring that no critical information is lost or corrupted during updates.
+
 \subsection{Server Deployment}
+
+The cloud infrastructure deployment leverages Infrastructure as Code principles through Terraform, enabling consistent and repeatable cloud resource provisioning. This approach allows the entire AWS infrastructure to be defined and managed through version-controlled code, significantly reducing the potential for configuration errors and ensuring deployment consistency across different environments.
+
+A key component of the server deployment strategy is the use of a Baked Amazon Machine Image (AMI) for EC2 instances within the auto-scaling group. This AMI contains all necessary dependencies and application code pre-installed, enabling rapid and reliable instance deployment. When new instances are launched, either during scaling events or updates, they begin with a consistent, production-ready configuration. This approach significantly reduces instance startup time and ensures uniformity across all deployed servers.
+
+\section{Other Considerations}
+
+The implementation of this parking management system necessitates careful consideration of legal and regulatory requirements, particularly those outlined in \cref{ch:regulatory_framework}. To ensure compliance with these regulations, especially the \gls{gdpr}, a comprehensive terms of service and privacy policy framework has been implemented.
+
+The system requires explicit user consent before any personal data collection or processing occurs. This is implemented through a mandatory terms and conditions acceptance process during user registration. The terms of service clearly outline the system's data collection practices, user rights, and privacy protections, ensuring transparency in how personal information is handled. These terms are presented in clear, accessible language to ensure users can make informed decisions about their data.
+
+Data minimization principles are strictly enforced throughout the system's operation. Only essential information required for the parking management functionality is collected and stored. This includes license plate numbers, basic user identification details, and access logs. The system maintains detailed records of user consent and data processing activities, as required by GDPR Article 30, which can be audited to demonstrate compliance with regulatory requirements.
+
+To address the requirements of the ePrivacy Directive and the emerging AI Act, the system implements strict protocols for data retention and processing. All collected data is stored securely with encryption at rest and in transit. The retention period for personal data is clearly defined, and automated processes ensure that data is deleted when it is no longer necessary for the system's operation. This approach aligns with both the data minimization principle and the specific requirements for data retention outlined in the regulatory framework.
+
+Regular updates to the terms of service are conducted to ensure ongoing compliance with evolving regulations and to address new requirements as they emerge. Users are notified of any significant changes to the terms and, where necessary, asked to provide renewed consent. This dynamic approach to legal compliance ensures that the system remains current with regulatory requirements while maintaining transparency with its users.
 
 
