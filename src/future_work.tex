@@ -1,7 +1,13 @@
 \chapter{Future work}\label{ch:future_work}
 
-\todo{write this chapter}
+Despite the successful deployment of the parking management system across ten communities, several areas for improvement and future development have been identified. These enhancements aim to address current limitations and improve the system's scalability, maintainability, and reliability. 
 
-add that to change the db to a nosql for the users and keep the sql for the records
+While the system has demonstrated its effectiveness in managing ten communities, the addition of more locations has revealed performance limitations. The current architecture experiences slowdowns when scaling beyond this threshold, primarily due to the distributed nature of the system and the complexity of managing multiple independent databases. Future work should focus on optimizing the system's architecture to handle a larger number of communities efficiently.
 
-use prisma for the db
+The onboarding and updating process for new communities and system updates currently requires significant manual intervention. Developing automated deployment pipelines and standardized onboarding procedures would streamline these processes. This includes creating automated database migration tools, improving configuration management, and implementing more sophisticated version control mechanisms for community-specific settings. 
+
+A critical area for improvement is the development of a comprehensive monitoring system. The current architecture lacks centralized monitoring capabilities, making it challenging to detect and respond to issues across multiple communities promptly. Implementing a monitoring solution that provides real-time alerts for system failures, performance degradation, or connectivity issues would significantly enhance system reliability and reduce response times to critical problems.
+
+The current approach of distributing data storage across individual communities has presented challenges in terms of database migrations and backup management. A potential solution involves transitioning to a more centralized cloud-based infrastructure while maintaining edge computing capabilities for critical real-time operations. This hybrid approach could leverage cloud services for data storage and business intelligence while keeping essential functions at the community level.
+
+These enhancements would maintain the system's distributed processing capabilities while centralizing data management and monitoring functions, potentially resolving current scalability and maintenance challenges.
