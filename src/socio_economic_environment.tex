@@ -22,13 +22,22 @@ Automated parking management systems can positively impact the environment by re
 
 Nonetheless, the environmental costs of manufacturing and disposing of electronic components must be considered. The production of sensors, cameras, and other hardware components can be resource-intensive. Sustainable design practices and proper e-waste management are necessary to mitigate these effects.
 
+\section{Planning}
+
+The project was structured into distinct phases, each with specific activities and tasks, as illustrated in \cref{fig:planning}. The timeline for these phases was planned on a weekly basis, detailing the progression of activities from initial research to final deployment. The first month and a half of the project was dedicated to understanding the problem, reviewing relevant literature, exploring the necessary tools, and configuring them for our specific needs. This initial phase, encompassing research and planning, required a significant time investment due to the complexities and documentation gaps associated with certain tools like AWS or hardware integration. The subsequent five months were focused on development of the system and the final three months to writing the final document.
+
+\begin{figure}
+    \includegraphics{planning.png}
+    \caption{Gantt Chart for the Project Planning}\label{fig:planning}
+\end{figure}
+
 \section{Budget Analysis}
 
 The cost of implementing automated parking management systems is a significant consideration for many communities. The analysis includes a detailed assessment of hardware components, software, maintenance, and other relevant expenses.
 
-\cref{tab:manufacturing_costs_physical_components} details manufacturing costs for terminals, cameras, and networking equipment costs and other expenses for each community. The total cost for these physical components is estimated at \euro 621. However, it is worth noting that for this project, 10 different communiteis have been installed totaling to \euro 6210 for the physical components. Moreover, in \cref{tab:manufacturing_costs_software_components} the cost of the software components are included totaling to \euro 30.
+\cref{tab:hardware_costs_physical_components} details hardware costs for terminals, cameras, and networking equipment costs and other expenses for each community. The total cost for these physical components is estimated at 621 \euro\ per community. However, it is worth noting that for this project, 10 different communiteis have been installed totaling to 6210 \euro\ for the physical components. Moreover, in \cref{tab:costs_software_components} the cost of the software components are included totaling to 30 \euro. Moreover, the human costs associated to this project, refer to \cref{tab:human_costs}, amount to 13900 \euro.
 
-For this project, the total cost would amount to \euro 6240, which includes the necessary hardware and software for a typical residential community. However, it's important to note that this does not account for installation and long-term maintenance costs or potential upgrades, which are essential for the system's longevity and effectiveness.
+For this project, the total cost would amount to 20140 \euro, which includes the necessary hardware and software for a typical residential community and the human labor costs. However, it's important to note that this does not account for installation and long-term maintenance costs or potential upgrades, which are essential for the system's longevity and effectiveness.
 
 In conclusion, while automated parking management systems hold significant promise for urban areas and residential communities, careful consideration of social, economic, and environmental factors is essential. Addressing these challenges with appropriate regulations and sustainable practices will maximize their potential benefits in creating more livable and efficient urban spaces.
 
@@ -48,7 +57,7 @@ In conclusion, while automated parking management systems hold significant promi
 		\textbf{Total}              &                                               &                   & 621                   \\
 		\bottomrule
 	\end{tabular}
-	\caption{Manufacturing costs for the physical components for each community.}\label{tab:manufacturing_costs_physical_components}
+	\caption{Hardware costs for the physical components for one community.}\label{tab:hardware_costs_physical_components}
 \end{table}
 
 \begin{table}[H]
@@ -61,5 +70,21 @@ In conclusion, while automated parking management systems hold significant promi
 		\textbf{Total} &                                          &                   & 30                    \\
 		\bottomrule
 	\end{tabular}
-	\caption{Manufacturing costs for the software components and maintenance.}\label{tab:manufacturing_costs_software_components}
+	\caption{Costs for the software components and maintenance.}\label{tab:costs_software_components}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{ l l l r }
+        \toprule
+		\textbf{Item}  & \textbf{Model}                           & \textbf{Quantity} & \textbf{Cost (\euro)} \\
+        \midrule
+        Personal Computer & Macbook Air & 1 & 1600  \\
+        Junior Engineer Hours & 15 \euro/h & 500 & 7500 \\
+        Senior Engineer Hours & 60 \euro/h & 40 & 2400 \\
+        Electricity, labs, climate control, management, etc. & & & 2040 \\
+        \midrule
+        \textbf{Total} & & & 13900 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Human costs.}\label{tab:human_costs}
 \end{table}
