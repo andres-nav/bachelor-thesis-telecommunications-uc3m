@@ -6,9 +6,7 @@
 
 ---
 
-This work has been awarded a grade of 9.4/10 and it has been done by [Andres Navarro Pedregal](https://www.linkedin.com/in/andresnav) under the supervision of David Larrabeiti López
-
-Here are some cool videos:
+This work has been awarded a grade of 9.4/10 and it has been done by [Andres Navarro Pedregal](https://www.linkedin.com/in/andresnav) under the supervision of David Larrabeiti López.
 
 You can find the latex template used [here](https://github.com/andres-nav/templates/blob/main/thesis_uc3m.sty).
 
