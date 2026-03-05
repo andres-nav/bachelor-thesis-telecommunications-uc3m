@@ -1,0 +1,6 @@
+*.el
+*.bbl
+**/build/
+**/.auctex-auto/
+*.blg
+**/~**
